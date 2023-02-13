@@ -32,6 +32,7 @@ namespace MhbWasmSQLite.Server.Controllers
 			SQL = $@"
 SELECT Id, BCV, BookID, Chapter, Verse, KJV, VerseOffset, DescH, DescD, DescHSlug
 FROM Scripture
+WHERE BookID=1
 ORDER BY Id
 LIMIT 50
 ";

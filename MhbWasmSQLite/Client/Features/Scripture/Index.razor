@@ -1,0 +1,44 @@
+﻿@page "/scriptures"
+<PageTitle>Scriptures</PageTitle>
+<h1>Scriptures</h1>
+@using MhbWasmSQLite.Client.Enums
+
+
+@switch (_status)
+{
+	case Status.Loading:
+		<h4 class="text-info">Loading Data</h4>
+		break;
+
+	case Status.Loaded:
+
+		@foreach (var item in svc.Scriptures)
+		{
+
+			@if (item.DescH != "NULL")
+			{
+				<h3>@item.DescH</h3>
+			}
+
+			@if (item.DescD != "NULL")
+			{
+				<h5 class="text-end mt-3 mb-1 text-black-50 fst-italic">@item.DescD</h5>
+			}
+
+			<p class="fs-4">
+				<sup class="text-primary"><b>@item.Verse</b></sup> @((MarkupString)@item.KJV!)
+			</p>
+		}
+
+		break;
+
+	case Status.Error:
+		<h4 class="text-danger mt-5">Error no data gotten</h4>
+		<p class="">Error...</p>
+		<p class="p-2">@_msg</p>
+		break;
+
+	default:
+		break;
+}
+

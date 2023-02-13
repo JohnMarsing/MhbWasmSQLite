@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MhbWasmSQLite.Server", "MhbWasmSQLite\Server\MhbWasmSQLite.Server.csproj", "{9DE7EDFA-08D3-40D1-89D7-C5518AAB6CC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MhbWasmSQLite.Server", "MhbWasmSQLite\Server\MhbWasmSQLite.Server.csproj", "{9DE7EDFA-08D3-40D1-89D7-C5518AAB6CC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MhbWasmSQLite.Client", "MhbWasmSQLite\Client\MhbWasmSQLite.Client.csproj", "{A50CC663-BD29-4DFA-9556-57A606AAD392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MhbWasmSQLite.Client", "MhbWasmSQLite\Client\MhbWasmSQLite.Client.csproj", "{A50CC663-BD29-4DFA-9556-57A606AAD392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MhbWasmSQLite.Shared", "MhbWasmSQLite\Shared\MhbWasmSQLite.Shared.csproj", "{E5DF5E39-B0D2-48CC-B817-36FA9864B707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MhbWasmSQLite.Shared", "MhbWasmSQLite\Shared\MhbWasmSQLite.Shared.csproj", "{E5DF5E39-B0D2-48CC-B817-36FA9864B707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
