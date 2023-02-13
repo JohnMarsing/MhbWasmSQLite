@@ -23,6 +23,18 @@ C:\Users\JohnM\source\repos\MhbWasmSQLite\MhbWasmSQLite\Server\Data\
 https://www.mssqltips.com/sqlservertip/3087/creating-a-sql-server-linked-server-to-sqlite-to-import-data/#:~:text=Creating%20a%20SQL%20Server%20Linked%20Server%20to%20SQLite,it%20into%20a%20SQL%20Server%20database%20table.%20
 
 
+```
+		public static List<ScriptureVM> scriptures = new()
+		{
+			new ScriptureVM {ID=1, BookID=1, Chapter=1, Verse=1, KJV="In the beginning God created the heaven and the earth.", DescH="God creates heaven, earth, plants, animals a man named Adom", DescD="God creates heaven and earth;"},
+			new ScriptureVM {ID=2, BookID=1, Chapter=1, Verse=2, KJV="And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.", DescH=null, DescD=null}
+		};
+		
+var scripture = scriptures.FirstOrDefault(s => s.ID == ScriptureId);
+
+SELECT * FROM Scripture ORDER BY Id LIMIT 5
+
+```
 
 vwScripturePortToSQLite
 
