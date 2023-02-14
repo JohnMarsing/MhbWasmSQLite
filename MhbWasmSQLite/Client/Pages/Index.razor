@@ -1,9 +1,9 @@
 ﻿@page "/"
+@using Page = MhbWasmSQLite.Client.Links.Home
 
-<PageTitle>Index</PageTitle>
+<PageTitle>@Page.Title</PageTitle>
+<div class="pb-2 mt-4 mb-2 border-bottom">
+	<h1><i class="@Page.Icon"></i> @Page.Title</h1>
+</div>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+@*<BibleSearchForm/>*@

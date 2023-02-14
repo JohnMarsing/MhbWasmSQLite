@@ -1,0 +1,35 @@
+@inherits LayoutComponentBase
+@using MhbWasmSQLite.Client.Shared.Header
+
+<div class="page">
+
+	<header>
+		@*<NavBootstrapMenu UseDarkMode="true"></NavBootstrapMenu>*@
+	</header>
+
+	<div class="container">
+		<div class="main">
+			@* <div class="top-row px-1"> *@
+			<div class="top-row px-0">
+				<LoginDisplay />
+				@*<BlazoredToasts />*@
+			</div>
+
+			@* <div class="content px-4"> *@
+			<div class="content px-1">
+				@Body
+			</div>
+		</div>
+
+		<footer class="text-muted">
+			<NavBarFooter />
+		</footer>
+
+		@*
+		<BlazoredToasts />
+			This causes an infinite loop when looking at the Redux tab
+			<StateLoader />
+		*@
+
+	</div>
+</div>
