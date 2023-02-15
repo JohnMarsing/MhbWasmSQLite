@@ -2,9 +2,14 @@
 @using MhbWasmSQLite.Shared
 @inject HttpClient Http
 
-<PageTitle>Weather forecast</PageTitle>
+@using Page = MhbWasmSQLite.Client.Links.Fetchdata
 
-<h1>Weather forecast</h1>
+<PageTitle>@Page.Title</PageTitle>
+<div class="pb-2 mt-4 mb-2 border-bottom">
+  <h1><i class="@Page.Icon"></i> @Page.Title</h1>
+</div>
+
+<h3>@Page.ShortTitle</h3>
 
 <p>This component demonstrates fetching data from the server.</p>
 

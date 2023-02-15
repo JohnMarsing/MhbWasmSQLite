@@ -10,23 +10,23 @@
 		<div class="row pt-2 pb-1 d-print-none">
 			<div class="col-12">
 				<a href="" class="btn btn-xs btn-outline-info float-end text-black-50">
-					<u>Login ToDo</u> <i class="fas fa-sign-in-alt"></i>
+					<u>Login</u> <i class="fas fa-sign-in-alt"></i>
 				</a>
 
-@*
+				@*
 				<AuthorizeView>
-					<Authorized>
-						<LogoutForm />
-						<ProfileAnchor IsXsOrSm="true" />
-					</Authorized>
+				<Authorized>
+				<LogoutForm />
+				<ProfileAnchor IsXsOrSm="true" />
+				</Authorized>
 
-					<NotAuthorized>
-						<div class="col-12">
-							<LoginAnchor />
-						</div>
-					</NotAuthorized>
+				<NotAuthorized>
+				<div class="col-12">
+				<LoginAnchor />
+				</div>
+				</NotAuthorized>
 				</AuthorizeView>
-*@
+				*@
 			</div>
 		</div>
 
@@ -45,24 +45,24 @@
 				<BibleSearch />
 			</div>
 			<div class="col-6">
-				
+
 				<a href="" class="btn btn-xs btn-outline-info float-end text-black-50">
 					<u>Login ToDo</u> <i class="fas fa-sign-in-alt"></i>
 				</a>
 
-@*			<AuthorizeView>
-					<Authorized>
-						<LogoutForm />
-						<ProfileAnchor IsXsOrSm="false" />
-					</Authorized>
+				@*			<AuthorizeView>
+				<Authorized>
+				<LogoutForm />
+				<ProfileAnchor IsXsOrSm="false" />
+				</Authorized>
 
-					<NotAuthorized>
-						<div class="col-12">
-							<LoginAnchor />
-						</div>
-					</NotAuthorized>
-			</AuthorizeView>
-*@
+				<NotAuthorized>
+				<div class="col-12">
+				<LoginAnchor />
+				</div>
+				</NotAuthorized>
+				</AuthorizeView>
+				*@
 			</div>
 		</div>
 	</div>
@@ -70,12 +70,13 @@
 	<div class="row pt-2 pb-1 d-print-none">
 		<div class="col-12">
 			<BookChapterAnchorList />
-			<BookChapterDisplay 
-				BibleBook="BibleBook.Exodus"
-				ChapterId="1">
+			@*
+			<BookChapterDisplay
+			BibleBook="BibleBook.Exodus"
+			ChapterId="1">
 			</BookChapterDisplay>
+			*@
 		</div>
 	</div>
 
 </div>
-

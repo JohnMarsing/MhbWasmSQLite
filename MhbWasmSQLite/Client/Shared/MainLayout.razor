@@ -1,17 +1,18 @@
 @inherits LayoutComponentBase
 @using MhbWasmSQLite.Client.Shared.Header
+@using MhbWasmSQLite.Client.Shared.NavBar
 
 <div class="page">
 
 	<header>
-		<NavBootstrapMenu UseDarkMode="true"></NavBootstrapMenu>
+		<Menu UseDarkMode="true"></Menu>
 	</header>
 
 	<div class="container">
 		<div class="main">
 			@* <div class="top-row px-1"> *@
 			<div class="top-row px-0">
-				<LoginDisplay />
+				<Index />
 				@*<BlazoredToasts />*@
 			</div>
 
@@ -22,7 +23,7 @@
 		</div>
 
 		<footer class="text-muted">
-			<NavBarFooter />
+			<Footer />
 		</footer>
 
 		@*

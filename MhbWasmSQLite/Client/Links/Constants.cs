@@ -56,7 +56,8 @@ public static class Fetchdata
 {
 	public const string Index = "/fetchdata";
 	public const string Title = "Fetch Data";
-	public const string Icon = "fas fa-list";
+  public const string ShortTitle = "Weather Forecast";
+  public const string Icon = "fas fa-list";
 }
 
 public static class Home
