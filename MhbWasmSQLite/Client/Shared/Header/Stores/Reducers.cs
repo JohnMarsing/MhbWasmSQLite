@@ -1,10 +1,9 @@
-﻿//using MhbWasmSQLite.Client.Stores;
+﻿using Fluxor;
 
 namespace MhbWasmSQLite.Client.Shared.Header.Stores;
 
 public static class Reducers
 {
-/*
 	[ReducerMethod]
 	public static ToolbarState ReduceSetBibleBookAction(ToolbarState state,
 			SetBibleBookAction action) =>
@@ -18,5 +17,5 @@ public static class Reducers
 					new ToolbarState(
 						BibleBook: state.BibleBook,
 						BibleWebsite: action.BibleWebsite); 
-*/
+
 }

@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using MhbWasmSQLite.Client.Enums;
 
+namespace MhbWasmSQLite.Client.Features.BibleSearch;
 
-namespace MhbWasmSQLite.Client.Shared;
-
-public partial class BibleSearchForm
+public partial class Index
 {
 	private FormValidation VM = new FormValidation();
 

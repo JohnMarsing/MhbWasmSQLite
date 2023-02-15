@@ -1,0 +1,44 @@
+﻿@using MhbWasmSQLite.Client.Links
+
+@using Page = MhbWasmSQLite.Client.Links
+
+<nav id="navBootstrapMenu" class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 @NavBarColor">
+	<div class="container">
+		<NavbarHomeButton></NavbarHomeButton>
+		<button class="navbar-toggler" @onclick="ToggleNavBootstrapMenu" type="button"
+						data-bs-toggle="collapse" data-target=".navbar-collapse"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="@NavMenuCssClass navbar-collapse d-sm-inline-flex flex-sm-row-reverse"
+				 @onclick="ToggleNavBootstrapMenu">
+			<ul class="navbar-nav flex-grow-1">
+
+
+				<li class="nav-item">
+					<a class="nav-link @TextColor" href="@Page.BibleSearch.Index">
+						<i class="@Page.BibleSearch.Icon" aria-hidden="true"></i>
+						@Page.BibleSearch.Title
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link @TextColor" href="">
+						<i class="@Page.Counter.Icon" aria-hidden="true"></i>
+						@Page.Counter.Title
+					</a>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link @TextColor" href="">
+						<i class="@Page.Fetchdata.Icon" aria-hidden="true"></i>
+						@Page.Fetchdata.Title
+					</a>
+				</li>
+
+
+			</ul>
+		</div>
+	</div>
+</nav>

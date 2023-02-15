@@ -1,4 +1,6 @@
-﻿using MhbWasmSQLite.Shared;
+﻿using MhbWasmSQLite.Client.Shared;
+using MhbWasmSQLite.Shared;
+using MhbWasmSQLite.Client.Enums;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Net.Http.Json;
@@ -10,8 +12,8 @@ public interface IScriptureService
 {
 	public List<ScriptureVM> Scriptures { get; set; }
 	//Task<List<ScriptureVM>> GetByBookChapter(int id);
-	Task GetByBookChapter(int id);
-	Task<ScriptureVM> GetById(int id);
+	Task GetByBookChapter(BibleBook bibleBook, int chapterId);
+	Task<ScriptureVM> GetById(int id);  // 
 }
 
 public class ScriptureService : IScriptureService
@@ -28,8 +30,9 @@ public class ScriptureService : IScriptureService
 	public List<ScriptureVM> Scriptures { get; set; } = new();
 
 	//public Task<List<ScriptureVM>> GetByBookChapter(int id)
-	public async Task GetByBookChapter(int id)
+	public async Task GetByBookChapter(BibleBook bibleBook, int chapterId)
 	{
+		
 		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: "api/scripture");
 		if (result is not null)
 		{
@@ -41,4 +44,5 @@ public class ScriptureService : IScriptureService
 	{
 		throw new NotImplementedException();
 	}
+
 }

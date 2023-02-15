@@ -44,10 +44,27 @@ public static class BibleSearch
 	public const string Icon = "fas fa-search";  //fas fa-bible
 }
 
+
+public static class Counter
+{
+	public const string Index = "/counter";
+	public const string Title = "Counter";
+	public const string Icon = "fas fa-plus";
+}
+
+public static class Fetchdata
+{
+	public const string Index = "/fetchdata";
+	public const string Title = "Fetch Data";
+	public const string Icon = "fas fa-list";
+}
+
 public static class Home
 {
 	public const string Index = "/";
 	public const string Title = "My Hebrew Bible";
+	public const string ShortTitle = "My Heb. Bib.";
+	public const string Acronym = "M. H. B.";
 	public const string PageTitle = "Home | MHB";
 	public const string Icon = "fas fa-home";
 	public const string Error = "/Error";
