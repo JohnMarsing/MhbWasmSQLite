@@ -7,7 +7,7 @@ namespace MhbWasmSQLite.Client.Infrastructure;
 
 public static class ClaimsPrincipalExtensions
 {
-	public static string GetRoleLMM(this ClaimsPrincipal user)
+	public static string GetRoleLMM(this ClaimsPrincipal? user)
 	{
 		return user.Claims?.FirstOrDefault(c => c.Type == "https://schemas.livingmessiah.com/roles")?.Value;
 	}

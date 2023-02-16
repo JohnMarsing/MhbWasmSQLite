@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\BibleSearch\Enums\" />
     <Folder Include="Links\" />
   </ItemGroup>
 

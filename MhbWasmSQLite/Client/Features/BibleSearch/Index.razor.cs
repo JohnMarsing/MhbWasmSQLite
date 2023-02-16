@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using MhbWasmSQLite.Client.Enums;
+using MhbWasmSQLite.Client.Shared.Header.Enums;
 
 namespace MhbWasmSQLite.Client.Features.BibleSearch;
 

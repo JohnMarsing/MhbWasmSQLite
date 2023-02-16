@@ -1,10 +1,10 @@
 ﻿using MhbWasmSQLite.Client.Shared;
 using MhbWasmSQLite.Shared;
-using MhbWasmSQLite.Client.Enums;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using MhbWasmSQLite.Client.Shared.Header.Enums;
 
 namespace MhbWasmSQLite.Client.Services;
 

@@ -1,12 +1,12 @@
-﻿@using MhbWasmSQLite.Client.Enums
+﻿@using MhbWasmSQLite.Client.Shared.Header.Enums
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
 <BlazoredTypeahead SearchMethod="SearchBibleBooks"
                    TValue="BibleBook"
                    TItem="BibleBook"
-                   Value="SelectedBook"
-                   ValueChanged="SelectedResultChanged" 
-                   ValueExpression="@(() => SelectedBook)"
+									 Value="BibleSearchState!.Value.BibleBook"
+                   ValueChanged="SelectedResultChanged"
+									 ValueExpression="@(() => BibleSearchState!.Value.BibleBook)"
 									 EnableDropDown="true"
 									 MaximumSuggestions="66"
 									 MinimumLength="2"

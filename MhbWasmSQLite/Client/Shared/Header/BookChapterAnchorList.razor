@@ -1,13 +1,12 @@
 ﻿@using MhbWasmSQLite.Client.Enums
-@using MhbWasmSQLite.Client.Shared.Header.Stores
 
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@if (ToolbarState.Value.BibleBook is not null)
+@if (BibleSearchState.Value.BibleBook is not null)
 {
 	<ul class="list-inline">
 
-		@for (int i = 1; i <= ToolbarState.Value.BibleBook.LastChapter; i++)
+		@for (int i = 1; i <= BibleSearchState.Value.BibleBook.LastChapter; i++)
 		{
 			<li class="list-inline-item">
 				<a href='@AnchorBookChapterUrl(i)' title="@BookChapterTitle(i)" target="_blank">@i</a>
@@ -15,3 +14,5 @@
 		}
 	</ul>
 }
+
+<p>ToDo: Show, when appropriate, BookChapterDisplay </p>

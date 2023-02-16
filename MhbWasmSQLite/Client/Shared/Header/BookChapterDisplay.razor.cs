@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using MhbWasmSQLite.Shared;
 using MhbWasmSQLite.Client.Services;
 using MhbWasmSQLite.Client.Enums;
+using MhbWasmSQLite.Client.Shared.Header.Enums;
 //using Fluxor;
 //using Fluxor.Blazor.Web.Components;
 
