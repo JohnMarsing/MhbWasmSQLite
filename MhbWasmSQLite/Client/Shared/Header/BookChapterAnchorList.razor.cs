@@ -6,18 +6,17 @@ namespace MhbWasmSQLite.Client.Shared.Header;
 
 public partial class BookChapterAnchorList
 {
+	/*	*/
 	[Inject] private IState<State>? BibleSearchState { get; set; }
+	[Inject] public IDispatcher? Dispatcher { get; set; }
 
-	protected string AnchorBookChapterUrl(int chapter)
+	private void Chapter_ButtonClick(int chapter)
 	{
-		if (BibleSearchState!.Value.Chapter == BibleWebsite.MyHebrewBible)
-		{
-			return $"{BibleWebsite.MyHebrewBible.UrlBase}{BibleSearchState.Value.BibleBook.Title}/{chapter}{UrlSuffix(true)}";
-		}
-		else
-		{
-		}
+		Dispatcher!.Dispatch(new GetVerses_Action(BibleBook.Genesis, chapter));
+
 	}
+
+
 
 }
 

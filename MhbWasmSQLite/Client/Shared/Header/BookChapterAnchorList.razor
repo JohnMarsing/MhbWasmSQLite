@@ -2,17 +2,29 @@
 
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@if (BibleSearchState.Value.BibleBook is not null)
+@*@if (BibleSearchState.Value.BibleBook is not null)*@
+
+@if (BibleSearchState.Value.VisibleState)
 {
 	<ul class="list-inline">
 
 		@for (int i = 1; i <= BibleSearchState.Value.BibleBook.LastChapter; i++)
 		{
-			<li class="list-inline-item">
-				<a href='@AnchorBookChapterUrl(i)' title="@BookChapterTitle(i)" target="_blank">@i</a>
-			</li>
+			<button class="btn btn-sm btn-primary my-3"
+					@onclick="@(e => Chapter_ButtonClick(@i))">
+				@i
+			</button>
 		}
 	</ul>
 }
+else
+{
+	<ul>
+		<li>VisibleState: @BibleSearchState.Value.VisibleState</li>
+		@*<li>Abrv: @BibleSearchState.Value.BibleBook.Abrv</li>*@
+		@*<li>Chapter: @BibleSearchState.Value.Chapter</li>*@
+	</ul>
+}
 
-<p>ToDo: Show, when appropriate, BookChapterDisplay </p>
+@*title="@BookChapterTitle(i)*@
+

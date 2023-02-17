@@ -1,41 +1,23 @@
 ﻿@using MhbWasmSQLite.Client.Enums
 
-@switch (_status)
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@foreach (var item in VersesState.Value.Scriptures!)
 {
-	case Status.Loading:
-		<h4 class="text-info">Loading Data</h4>
-		break;
 
-	case Status.Loaded:
+	@if (item.DescH != "NULL")
+	{
+		<h3>@item.DescH</h3>
+	}
 
-		@foreach (var item in svc.Scriptures)
-		{
+	@if (item.DescD != "NULL")
+	{
+		<h5 class="text-end mt-3 mb-1 text-black-50 fst-italic">@item.DescD</h5>
+	}
 
-			@if (item.DescH != "NULL")
-			{
-				<h3>@item.DescH</h3>
-			}
-
-			@if (item.DescD != "NULL")
-			{
-				<h5 class="text-end mt-3 mb-1 text-black-50 fst-italic">@item.DescD</h5>
-			}
-
-			<p class="fs-4">
-				<sup class="text-primary"><b>@item.Verse</b></sup> @((MarkupString)@item.KJV!)
-			</p>
-		}
-
-		break;
-
-	case Status.Error:
-		<h4 class="text-danger mt-5">Error no data gotten</h4>
-		<p class="">Error...</p>
-		<p class="p-2">@_msg</p>
-		break;
-
-	default:
-		break;
+	<p class="fs-4">
+		<sup class="text-primary"><b>@item.Verse</b></sup> @((MarkupString)@item.KJV!)
+	</p>
 }
 
 

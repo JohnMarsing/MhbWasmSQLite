@@ -11,7 +11,6 @@ namespace MhbWasmSQLite.Client.Services;
 public interface IScriptureService
 {
 	public List<ScriptureVM> Scriptures { get; set; }
-	//Task<List<ScriptureVM>> GetByBookChapter(int id);
 	Task GetByBookChapter(BibleBook bibleBook, int chapterId);
 	Task<ScriptureVM> GetById(int id);  // 
 }
@@ -29,11 +28,13 @@ public class ScriptureService : IScriptureService
 	public HttpClient? Http {get; }
 	public List<ScriptureVM> Scriptures { get; set; } = new();
 
-	//public Task<List<ScriptureVM>> GetByBookChapter(int id)
 	public async Task GetByBookChapter(BibleBook bibleBook, int chapterId)
 	{
+		string Uri = $"api/scripture{bibleBook.Value}/{chapterId}";
+		_logger.LogDebug(string.Format("Inside {0}; Uri: {1}"
+			, nameof(ScriptureService) + "!" + nameof(GetByBookChapter), Uri));
+		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: Uri);
 		
-		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: "api/scripture");
 		if (result is not null)
 		{
 			Scriptures = result;

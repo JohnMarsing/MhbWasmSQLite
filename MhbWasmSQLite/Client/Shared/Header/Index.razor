@@ -3,6 +3,8 @@
 @using MhbWasmSQLite.Client.Shared.Header.Enums
 @using MhbWasmSQLite.Client.Enums
 
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
 <div class="container-fluid bg-light">
 
 	<div class="@MediaQuery.XsOrSm.DivClass">
@@ -70,6 +72,14 @@
 	<div class="row pt-2 pb-1 d-print-none">
 		<div class="col-12">
 			<BookChapterAnchorList />
+
+			@if (VersesState!.Value.VisibleState)
+			{
+				<LoadingComponent IsLoading="VersesState!.Value.Scriptures == null">
+					<BookChapterDisplay />
+				</LoadingComponent>
+			}
+
 			@*
 			<BookChapterDisplay
 			BibleBook="BibleBook.Exodus"

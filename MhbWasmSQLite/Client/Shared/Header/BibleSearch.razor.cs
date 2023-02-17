@@ -8,7 +8,7 @@ public partial class BibleSearch
   [Inject] private IState<State>? BibleSearchState { get; set; }
   [Inject] public IDispatcher? Dispatcher { get; set; }
 
-  private async Task<IEnumerable<BibleBook>> SearchBibleBooks(string searchText)
+	private async Task<IEnumerable<BibleBook>> SearchBibleBooks(string searchText)
   {
     return await Task.FromResult(BibleBook.List
       .Where(x => x.Title.ToLower().Contains(searchText.ToLower()))
@@ -28,4 +28,5 @@ public partial class BibleSearch
       Dispatcher!.Dispatch(new ShowDetails_Action(true));
     }
   }
+ 
 }
