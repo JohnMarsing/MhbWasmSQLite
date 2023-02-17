@@ -30,7 +30,7 @@ public class ScriptureService : IScriptureService
 
 	public async Task GetByBookChapter(BibleBook bibleBook, int chapterId)
 	{
-		string Uri = $"api/scripture{bibleBook.Value}/{chapterId}";
+		string Uri = $"api/scripture/{bibleBook.Value}/{chapterId}";
 		_logger.LogDebug(string.Format("Inside {0}; Uri: {1}"
 			, nameof(ScriptureService) + "!" + nameof(GetByBookChapter), Uri));
 		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: Uri);

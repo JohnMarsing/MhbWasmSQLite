@@ -2,25 +2,50 @@
 
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@*@if (BibleSearchState.Value.BibleBook is not null)*@
-
+@*
+@if (BibleSearchState.Value.BibleBook is not null)
 @if (BibleSearchState.Value.VisibleState)
-{
-	<ul class="list-inline">
+*@
 
-		@for (int i = 1; i <= BibleSearchState.Value.BibleBook.LastChapter; i++)
-		{
-			<button class="btn btn-sm btn-primary my-3"
+@if (BibleSearchState!.Value.ShowChapters)
+{
+
+	if (BibleSearchState.Value.BibleBook is not null)
+	{
+		<ul class="list-inline">
+
+			@for (int i = 1; i <= BibleSearchState!.Value!.BibleBook!.LastChapter; i++)
+			{
+				<button class="btn btn-sm btn-primary px-2  gx-2"
 					@onclick="@(e => Chapter_ButtonClick(@i))">
-				@i
-			</button>
-		}
-	</ul>
+					@i
+				</button>
+			}
+
+
+		</ul>
+
+
+		<div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+			@for (int i = 1; i <= BibleSearchState!.Value!.BibleBook!.LastChapter; i++)
+			{
+				<button type="button" class="btn btn-outline-primary">@i</button>
+			}
+
+			
+		</div>
+	}
+	else
+	{
+		<p>BibleSearchState.Value.BibleBook is null</p>
+	}
+
+
 }
 else
 {
 	<ul>
-		<li>VisibleState: @BibleSearchState.Value.VisibleState</li>
+		<li>ShowChapters: @BibleSearchState.Value.ShowChapters</li>
 		@*<li>Abrv: @BibleSearchState.Value.BibleBook.Abrv</li>*@
 		@*<li>Chapter: @BibleSearchState.Value.Chapter</li>*@
 	</ul>

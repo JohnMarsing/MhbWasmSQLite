@@ -12,8 +12,10 @@ public partial class BookChapterAnchorList
 
 	private void Chapter_ButtonClick(int chapter)
 	{
+		Dispatcher!.Dispatch(new SetChapter_Action(chapter));
 		Dispatcher!.Dispatch(new GetVerses_Action(BibleBook.Genesis, chapter));
-
+		//Dispatcher!.Dispatch(new ShowDetails_Action(true));
+		//Dispatcher!.Dispatch(new SetBibleBook_Action(bibleBook));
 	}
 
 

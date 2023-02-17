@@ -14,6 +14,8 @@ public record SetBibleBook_Action(Enums.BibleBook BibleBook);
 public record SetChapter_Action(int Chapter);
 public record ShowDetails_Action(bool IsVisible);
 
+public record ShowChapters_Action(bool IsVisible);
+
 public record GetVerses_Action(Enums.BibleBook BibleBook, int ChapterId);
 public record GetVersesSuccess_Action(List<ScriptureVM> Scriptures); 
 public record GetVersesFailure_Action(string ErrorMessage);
@@ -29,7 +31,7 @@ public record State
 	public string? ErrorMessage { get; init; }
 	public int Chapter { get; init; }
 	public List<ScriptureVM>? Scriptures { get; init; }
-	//public bool ShowDetails { get; init; }
+	public bool ShowChapters { get; init; }
 }
 
 // 3. Feature
@@ -43,7 +45,7 @@ public class FeatureImplementation : Feature<State>
     {
       // Don't set default BibleBook (e.g. Genesis) because we don't want <BibleSearch> to be collapsed from it's details
       Chapter = 1,
-      //ShowDetails = false
+			ShowChapters = false,
 			VisibleState = false,
 
     };
@@ -69,14 +71,14 @@ public static class Reducers
     return state with { Chapter = action.Chapter };
   }
 
-	/*
+	/*	*/
   [ReducerMethod]
-  public static State OnShowDetails(
-    State state, ShowDetails_Action action)
+  public static State OnShowChapters(
+    State state, ShowChapters_Action action)
   {
-    return state with { ShowDetails = action.IsVisible };
+    return state with { ShowChapters = action.IsVisible };
   }
-	*/
+
 
 	[ReducerMethod]
 	public static State OnGetVersesSuccess(
