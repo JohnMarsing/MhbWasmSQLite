@@ -31,8 +31,10 @@ public partial class BibleSearch
   {
 		//string inside = "namespace:[" + nameof(Header) + "]!" + nameof(BibleSearch) + "!" + nameof(SelectedResultChanged);
 		//Logger!.LogDebug(string.Format("Inside {0}; bibleBook.Abrv:{1}", inside, bibleBook.Abrv));
+		
+		Dispatcher!.Dispatch(new SetBibleBook_Action(bibleBook!));
 
-    if (bibleBook is null)
+		if (bibleBook is null)
     {
       //Dispatcher!.Dispatch(new ShowDetails_Action(false));
 			Dispatcher!.Dispatch(new ShowChapters_Action(false));
@@ -41,7 +43,7 @@ public partial class BibleSearch
     {
 			Dispatcher!.Dispatch(new ShowChapters_Action(true));
 			//Dispatcher!.Dispatch(new ShowDetails_Action(true));
-      Dispatcher!.Dispatch(new SetBibleBook_Action(bibleBook));
+      //Dispatcher!.Dispatch(new SetBibleBook_Action(bibleBook));
     }
   }
  

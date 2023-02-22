@@ -71,24 +71,24 @@
 
 	<div class="row pt-2 pb-1 d-print-none">
 		<div class="col-12">
-			<BookChapterAnchorList />
 
-			@if (VersesState!.Value.VisibleState)
+			@if (VersesState!.Value.BibleBook != null)
 			{
-				<LoadingComponent IsLoading="VersesState!.Value.Scriptures == null">
-					<BookChapterDisplay />
-				</LoadingComponent>
+				<BookChapterAnchorList CurrentBibleBook="@VersesState!.Value.BibleBook" />
 			}
-
-			@*
-			<BookChapterDisplay
-			BibleBook="BibleBook.Exodus"
-			ChapterId="1">
-			</BookChapterDisplay>
-			*@
 		</div>
 	</div>
 
 </div>
 
-<ToasterBibleSearch />
+<div class="container-fluid">
+	@if (VersesState!.Value.ShowVerses)
+	{
+		<h4 class="mt-4 mb-1">Chapter: @VersesState!.Value.Chapter</h4>
+		<LoadingComponent IsLoading="VersesState!.Value.Scriptures == null">
+			<BookChapterDisplay />
+		</LoadingComponent>
+	}
+</div>
+
+@*<ToasterBibleSearch />*@
