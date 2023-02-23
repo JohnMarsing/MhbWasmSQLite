@@ -9,7 +9,7 @@ public static class ClaimsPrincipalExtensions
 {
 	public static string? GetRoleLMM(this ClaimsPrincipal? user)
 	{
-		return user.Claims!.FirstOrDefault(c => c.Type == "https://schemas.livingmessiah.com/roles")?.Value;
+		return user!.Claims!.FirstOrDefault(c => c.Type == "https://schemas.livingmessiah.com/roles")?.Value;
 	}
 
 	public static string? GetUserId(this ClaimsPrincipal user)

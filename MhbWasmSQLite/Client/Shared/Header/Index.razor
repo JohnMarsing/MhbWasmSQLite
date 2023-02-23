@@ -2,6 +2,7 @@
 @using MhbWasmSQLite.Client.Shared
 @using MhbWasmSQLite.Client.Shared.Header.Enums
 @using MhbWasmSQLite.Client.Enums
+@using MhbWasmSQLite.Client.Shared.NavBar
 
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
@@ -72,9 +73,9 @@
 	<div class="row pt-2 pb-1 d-print-none">
 		<div class="col-12">
 
-			@if (VersesState!.Value.BibleBook != null)
+			@if (State!.Value.BibleBook != null)
 			{
-				<BookChapterAnchorList CurrentBibleBook="@VersesState!.Value.BibleBook" />
+				<BookChapterAnchorList CurrentBibleBook="@State!.Value.BibleBook" />
 			}
 		</div>
 	</div>
@@ -82,13 +83,23 @@
 </div>
 
 <div class="container-fluid">
-	@if (VersesState!.Value.ShowVerses)
+	@if (State!.Value.ShowVerses)
 	{
-		<h4 class="mt-4 mb-1">Chapter: @VersesState!.Value.Chapter</h4>
-		<LoadingComponent IsLoading="VersesState!.Value.Scriptures == null">
+		<h4 class="mt-4 mb-1">Chapter: @State!.Value.Chapter</h4>
+		<LoadingComponent IsLoading="State!.Value.Scriptures == null">
+			<PrevNextButton CurrentBibleBook="@State!.Value.BibleBook"
+											CurrentChapter="@State.Value.Chapter">
+			</PrevNextButton>
 			<BookChapterDisplay />
 		</LoadingComponent>
 	}
 </div>
 
-@*<ToasterBibleSearch />*@
+<div class="container-fluid bg-light">
+	@if (State!.Value.ShowVerses)
+	{
+		<AlephBetFooter />
+	}
+</div>
+
+<ToasterBibleSearch />

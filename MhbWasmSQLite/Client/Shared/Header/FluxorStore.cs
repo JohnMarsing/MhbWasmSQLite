@@ -10,12 +10,11 @@ using MhbWasmSQLite.Client.Shared.Header.Enums;
 namespace MhbWasmSQLite.Client.Shared.Header;
 
 // 1. Action
-public record SetBibleBook_Action(Enums.BibleBook BibleBook);
-//public record SetWebsite_Action(Enums.BibleWebsite BibleWebsite);
+public record SetBibleBook_Action(BibleBook? BibleBook);  //Enums.BibleBook BibleBook
 public record SetChapter_Action(int Chapter);
-public record ShowDetails_Action(bool IsVisible);
 
 public record ShowChapters_Action(bool IsVisible);
+public record ShowVerses_Action(bool IsVisible);
 
 public record GetVerses_Action(Enums.BibleBook BibleBook, int ChapterId);
 public record GetVersesSuccess_Action(List<ScriptureVM> Scriptures);
@@ -48,7 +47,6 @@ public class FeatureImplementation : Feature<State>
 			Chapter = 1,
 			ShowChapters = false,
 			ShowVerses = false,
-
 		};
 	}
 }
@@ -98,12 +96,8 @@ public static class Reducers
 	public static State OnGetVersesWarning(
 		State state, GetVersesWarning_Action action)
 	{
-		// Here might be a case where VisibleComponet has a .Table and 
-		//  You got this warning (no records found) then set it to .None
-		//  Therefore, this would be the only place where VisibleComponet = None
 		return state with
 		{
-			//VisibleComponet = Enums.VisibleComponet.MasterList,
 			ShowVerses = false,
 			WarningMessage = action.WarningMessage
 		};
@@ -136,16 +130,13 @@ public class Effects
 	{
 		string inside = nameof(Effects) + "!" + nameof(GetVerses) + "!" + nameof(GetVerses_Action);
 		string abrv = action.BibleBook != null ? action.BibleBook.Abrv : "NULL";
-		//string chpt = action.ChapterId != null ? action.ChapterId.ToString() : "NULL"; // The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' 
 
-		//Logger.LogDebug(string.Format("Inside {0}; Book/Chapter :{1} / {2}", inside, action.BibleBook.Value, action.ChapterId));
 		Logger.LogDebug(string.Format("Inside {0}; Book/Chapter :{1} / {2}", inside, abrv, action.ChapterId));
 		if (action.BibleBook is not null)
 		{
 			try
 			{
 				List<ScriptureVM> Scriptures = new();
-				//await svc.GetByBookChapter(BibleBook.Acts, 11); THIS WORKS AS EXPECTED
 				await svc.GetByBookChapter(action.BibleBook, action.ChapterId);
 
 				if (svc.Scriptures is not null)

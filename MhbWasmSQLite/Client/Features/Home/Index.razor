@@ -1,9 +1,14 @@
 ﻿@page "/"
 @using Page = MhbWasmSQLite.Client.Links.Home
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
 <PageTitle>@Page.Title</PageTitle>
-<div class="pb-2 mt-4 mb-2 border-bottom">
-	<h1><i class="@Page.Icon"></i> @Page.Title</h1>
-</div>
 
-@*<BibleSearchForm/>*@
+@if (State!.Value.ShowVerses == false)
+{
+	<div class="pb-2 mt-4 mb-2 border-bottom">
+		<h1><i class="@Page.Icon"></i> @Page.Title</h1>
+	</div>
+}
+
+

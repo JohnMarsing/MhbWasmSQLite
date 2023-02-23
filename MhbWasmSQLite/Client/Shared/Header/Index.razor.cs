@@ -5,7 +5,7 @@ namespace MhbWasmSQLite.Client.Shared.Header;
 
 public partial class Index
 {
-	[Inject] private IState<State>? VersesState { get; set; }
+	[Inject] private IState<State>? State { get; set; }
 	[Inject] public IDispatcher? Dispatcher { get; set; }
 
 }

@@ -1,0 +1,23 @@
+﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@if (!String.IsNullOrEmpty(@PrevText))
+{
+	<button type="button" class="btn btn-outline-primary"
+				@onclick="NavToBookChapter(true)">
+		<sup>@PrevText&nbsp;</sup><i class="fas fa-arrow-left"></i>
+		<br /><small>Prev</small>
+	</button>
+}
+
+@if (!String.IsNullOrEmpty(@NextText))
+{
+	<button type="button" class="btn btn-outline-primary"
+				@onclick="NavToBookChapter(false)">
+		<i class="fas fa-arrow-right"></i>&nbsp;<sup>@NextText</sup>
+		<br /><small>Next</small>
+	</button>
+
+}
+
+
+ @*fa-2x*@

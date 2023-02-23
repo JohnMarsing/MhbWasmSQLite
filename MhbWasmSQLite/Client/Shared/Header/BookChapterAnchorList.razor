@@ -2,20 +2,13 @@
 
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@if (BibleSearchState!.Value.ShowChapters)
+@if (State!.Value.ShowChapters)
 {
-	if (BibleSearchState.Value.BibleBook is not null)
+	if (State.Value.BibleBook is not null)
 	{
 		<div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
-			@for (int i = 1; i <= BibleSearchState!.Value!.BibleBook!.LastChapter; i++)
+			@for (int i = 1; i <= State!.Value!.BibleBook!.LastChapter; i++)
 			{
-				/*
-				[Source](https://shauncurtis.github.io/Building-Blazor-Applications/For-ForEach-in-Blazor.html)
-				Iteration statements such as for and foreach present challenges in Blazor components that you don't normally face.
-				Because in Blazor components the actual values/references are crystalised and used long after the loop completes.
-				This ...	@onclick="@(e => Chapter_ButtonClick(@i)) ... will always send *.LastChapter + 1
-				Therefore, you need a local variable e.g. `int iLocal = i;` and used it in your @onclick event Call
-				*/
 				int iLocal = i;
 				<button type="button" class="btn btn-outline-info"
 					@onclick="@(e => Chapter_ButtonClick(@iLocal))">

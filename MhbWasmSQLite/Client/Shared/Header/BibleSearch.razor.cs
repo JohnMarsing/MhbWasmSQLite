@@ -1,23 +1,19 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MhbWasmSQLite.Client.Shared.Header.Enums;
 using Fluxor;
-using MhbWasmSQLite.Client.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.ComponentModel;
 
 namespace MhbWasmSQLite.Client.Shared.Header;
 
 public partial class BibleSearch
 {
-  [Inject] private IState<State>? BibleSearchState { get; set; }
+  [Inject] private IState<State>? State { get; set; }
   [Inject] public IDispatcher? Dispatcher { get; set; }
 	[Inject] public ILogger<BibleBook>? Logger { get; set; }
 	
-  // protected override async Task OnInitializedAsync() { ... await Populate() ....}
 	protected override void OnInitialized()
 	{ 
-		base.OnInitializedAsync(); // see Fluxor-needs-base.OnInitialized.md
-	// base.OnInitializedAsync();
+		base.OnInitializedAsync(); 
 	}
 
 	private async Task<IEnumerable<BibleBook>> SearchBibleBooks(string searchText)
@@ -36,14 +32,13 @@ public partial class BibleSearch
 
 		if (bibleBook is null)
     {
-      //Dispatcher!.Dispatch(new ShowDetails_Action(false));
+			Dispatcher!.Dispatch(new SetBibleBook_Action(null));
 			Dispatcher!.Dispatch(new ShowChapters_Action(false));
+			Dispatcher!.Dispatch(new ShowVerses_Action(false));
 		}
-    else
+		else
     {
 			Dispatcher!.Dispatch(new ShowChapters_Action(true));
-			//Dispatcher!.Dispatch(new ShowDetails_Action(true));
-      //Dispatcher!.Dispatch(new SetBibleBook_Action(bibleBook));
     }
   }
  

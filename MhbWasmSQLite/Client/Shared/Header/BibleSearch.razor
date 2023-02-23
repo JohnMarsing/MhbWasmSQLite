@@ -4,9 +4,9 @@
 <BlazoredTypeahead SearchMethod="SearchBibleBooks"
                    TValue="BibleBook"
                    TItem="BibleBook"
-									 Value="BibleSearchState!.Value.BibleBook"
+									 Value="State!.Value.BibleBook"
                    ValueChanged="SelectedResultChanged"
-									 ValueExpression="@(() => BibleSearchState!.Value.BibleBook)"
+									 ValueExpression="@(() => State!.Value.BibleBook)"
 									 EnableDropDown="true"
 									 MaximumSuggestions="66"
 									 MinimumLength="2"
@@ -21,6 +21,3 @@
 		@mycontext.Title <i class="text-black-50">@mycontext.TransliterationInHebrew</i>
 	</ResultTemplate>
 </BlazoredTypeahead>
-
-
-@*<ToasterBibleSearch />*@
