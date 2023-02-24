@@ -87,9 +87,7 @@
 	{
 		<h4 class="mt-4 mb-1">Chapter: @State!.Value.Chapter</h4>
 		<LoadingComponent IsLoading="State!.Value.Scriptures == null">
-			<PrevNextButton CurrentBibleBook="@State!.Value.BibleBook"
-											CurrentChapter="@State.Value.Chapter">
-			</PrevNextButton>
+			<PrevNextButton />
 			<BookChapterDisplay />
 		</LoadingComponent>
 	}

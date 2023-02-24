@@ -17,9 +17,11 @@ public record ShowChapters_Action(bool IsVisible);
 public record ShowVerses_Action(bool IsVisible);
 
 public record GetVerses_Action(Enums.BibleBook BibleBook, int ChapterId);
-public record GetVersesSuccess_Action(List<ScriptureVM> Scriptures);
+public record GetVersesSuccess_Action(List<ScriptureVM> Scriptures, PrevNextButtonVM PrevNextButton);
 public record GetVersesFailure_Action(string ErrorMessage);
 public record GetVersesWarning_Action(string WarningMessage);
+
+public record SetPrevNext_Action(Enums.BibleBook BibleBook, int Chapter);
 
 // 2. State
 public record State
@@ -32,6 +34,7 @@ public record State
 	public List<ScriptureVM>? Scriptures { get; init; }
 	public bool ShowChapters { get; init; }
 	public bool ShowVerses { get; init; }
+	public PrevNextButtonVM? PrevNextButton { get; init; }
 }
 
 // 3. Feature
@@ -88,7 +91,8 @@ public static class Reducers
 			ShowVerses = true,
 			WarningMessage = string.Empty,
 			ErrorMessage = string.Empty,
-			Scriptures = action.Scriptures
+			Scriptures = action.Scriptures,
+			PrevNextButton = action.PrevNextButton
 		};
 	}
 
@@ -141,7 +145,8 @@ public class Effects
 
 				if (svc.Scriptures is not null)
 				{
-					dispatcher.Dispatch(new GetVersesSuccess_Action(svc.Scriptures));
+					//dispatcher.Dispatch(new GetVersesSuccess_Action(svc.Scriptures));
+					dispatcher.Dispatch(new GetVersesSuccess_Action(svc.Scriptures, GetPrevNextButton(action.BibleBook, action.ChapterId) ));
 				}
 				else
 				{
@@ -159,5 +164,11 @@ public class Effects
 		{
 			dispatcher.Dispatch(new GetVersesWarning_Action($"No action.BibleBook, abrv:{abrv}"));
 		}
+	}
+
+	private PrevNextButtonVM GetPrevNextButton(BibleBook bibleBook, int chapter) 
+	{
+		PrevNextButtonVM VM = new PrevNextButtonVM(bibleBook, chapter);
+		return VM;
 	}
 }
