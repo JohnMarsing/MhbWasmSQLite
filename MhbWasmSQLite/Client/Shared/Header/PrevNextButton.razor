@@ -1,26 +1,33 @@
 ﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@if (@State!.Value.PrevNextButton != null)
-{
+@*@if (@State!.Value.PrevNextButton != null)
+{}*@
 
-	@if (@State!.Value.PrevNextButton!.PrevBibleBook!.ThereIsNone == false)
-	{
-		<button type="button" class="btn btn-outline-primary"
+@if (@State!.Value.PrevNextButton!.PrevBibleBook!.ThereIsNone == false)
+{
+	<button type="button" class="btn btn-outline-primary"
 				@onclick="@(e => NavToBookChapter(true))">
-			<sup>@State!.Value.PrevNextButton!.PrevBibleBook!.ButtonText&nbsp;</sup><i class="@State!.Value.PrevNextButton!.PrevBibleBook.Icon"></i>
-			<br /><small>Prev</small>
-		</button>
-	}
+		<sup>@State!.Value.PrevNextButton!.PrevBibleBook!.ButtonText&nbsp;</sup><i class="@State!.Value.PrevNextButton!.PrevBibleBook.Icon"></i>
+		<br /><small>Prev</small>
+	</button>
 }
 
-@if (@State!.Value.PrevNextButton != null)
+<button type="button" class="btn btn-outline-danger"
+				@onclick="ClickClear">
+	<i class="fas fa-times"></i>
+	<br /><small>Clear</small>
+</button>
+
+
+@*@if (@State!.Value.PrevNextButton != null)
+{}*@
+
+@if (@State!.Value.PrevNextButton!.NextBibleBook!.ThereIsNone == false)
 {
-	@if (@State!.Value.PrevNextButton!.NextBibleBook!.ThereIsNone == false)
-	{
-		<button type="button" class="btn btn-outline-primary"
+	<button type="button" class="btn btn-outline-primary"
 				@onclick="@(e => NavToBookChapter(false))">
-			<i class="@State!.Value.PrevNextButton!.NextBibleBook.Icon"></i>&nbsp;<sup>@State!.Value.PrevNextButton!.NextBibleBook.ButtonText</sup>
-			<br /><small>Next</small>
-		</button>
-	}
+		<i class="@State!.Value.PrevNextButton!.NextBibleBook.Icon"></i>&nbsp;<sup>@State!.Value.PrevNextButton!.NextBibleBook.ButtonText</sup>
+		<br /><small>Next</small>
+	</button>
 }
+

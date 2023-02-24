@@ -81,6 +81,13 @@ public static class Reducers
 		return state with { ShowChapters = action.IsVisible };
 	}
 
+	[ReducerMethod]
+	public static State OnShowVerses(
+	State state, ShowVerses_Action action)
+	{
+		return state with { ShowVerses = action.IsVisible };
+	}
+
 
 	[ReducerMethod]
 	public static State OnGetVersesSuccess(

@@ -27,4 +27,12 @@ public partial class PrevNextButton
 			Dispatcher!.Dispatch(new GetVerses_Action(State!.Value.PrevNextButton!.NextBibleBook!.BibleBook!, chapter));
 		}
 	}
+
+	private void ClickClear()
+	{
+		Dispatcher!.Dispatch(new SetBibleBook_Action(null));
+		Dispatcher!.Dispatch(new ShowChapters_Action(false));
+		Dispatcher!.Dispatch(new ShowVerses_Action(false));
+	}
+
 }
