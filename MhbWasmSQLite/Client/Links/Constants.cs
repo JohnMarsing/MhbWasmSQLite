@@ -1,3 +1,5 @@
+
+// ToDo, Can I convert these to SmartEnums
 namespace MhbWasmSQLite.Client.Links;
 
 public static class About
@@ -35,7 +37,28 @@ public static class Account
 	}
 }
 
+public static class Article
+{
+	public const string Index = "/Article";
+	public const string Title = "Articles";
+	public const string ShortTitle = "";
+	public const string Icon = "far fa-newspaper";
+}
 
+public static class AlephTav
+{
+	public const string Index = "/AlephTav";
+	public const string Title = "Aleph Tav";
+	public const string ShortTitle = "";
+	public const string Icon = "fa-letter-aleph-tav";
+
+	public static class Introduction
+	{
+		public const string Index = "/AlephTav/Introduction";
+		public const string Title = "Standalone Aleph Tav Intro";
+		public const string Icon = "fa-letter-aleph-tav";
+	}
+}
 
 public static class BibleSearch
 {
@@ -44,12 +67,19 @@ public static class BibleSearch
 	public const string Icon = "fas fa-search";  //fas fa-bible
 }
 
-
 public static class Counter
 {
 	public const string Index = "/counter";
 	public const string Title = "Counter";
 	public const string Icon = "fas fa-plus";
+}
+
+public static class FavoriteVerses
+{
+	public const string Index = "/FavoriteVerses";
+	public const string Title = "Favorite Verses";
+	public const string ShortTitle = "";
+	public const string Icon = "fas fa-star";
 }
 
 public static class Fetchdata
@@ -58,6 +88,22 @@ public static class Fetchdata
 	public const string Title = "Fetch Data";
   public const string ShortTitle = "Weather Forecast";
   public const string Icon = "fas fa-list";
+}
+
+public static class Hebrew
+{
+	public const string Index = "/Hebrew";
+	public const string Title = "Hebrew"; //MhbWasmSQLite.Client.Features.Sitemap.Enums.LinkEnum.Hebrew.Title;
+	public const string ShortTitle = "";
+	public const string Icon = "fa-letter-aleph-bet";
+}
+
+public static class List
+{
+	public const string Index = "/List";
+	public const string Title = "Fetch Data";
+	public const string ShortTitle = "";
+	public const string Icon = "fas fa-torah";
 }
 
 public static class Home
@@ -123,4 +169,11 @@ public static class Sitemap
 	public const string Index = "/Sitemap";
 	public const string Title = "Sitemap";
 	public const string Icon = "fas fa-sitemap";
+}
+
+public static class Teaching
+{
+	public const string Index = "/Teaching";
+	public const string Title = "Teaching";
+	public const string Icon = "fas fa-graduation-cap";
 }

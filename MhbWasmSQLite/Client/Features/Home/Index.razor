@@ -1,14 +1,82 @@
 ﻿@page "/"
 @using Page = MhbWasmSQLite.Client.Links.Home
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@using MhbWasmSQLite.Client.Enums
 
 <PageTitle>@Page.Title</PageTitle>
 
 @if (State!.Value.ShowVerses == false)
 {
-	<div class="pb-2 mt-4 mb-2 border-bottom">
+@*	<div class="pb-2 mt-4 mb-2 border-bottom">
 		<h1><i class="@Page.Icon"></i> @Page.Title</h1>
+	</div>*@
+
+	<div class="row">
+		<div class="col-12">
+			<p class="powelfont">Welcome to...</p>
+		</div>
 	</div>
+
+	<div class="@MediaQuery.XsOrSm.DivClass">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="powelfont">My Hebrew Bible</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+		
+		<div class="row">
+			<div class="col-12">
+				<h1 class="powelfont">My Hebrew Bible</h1>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="@MediaQuery.XsOrSm.DivClass">
+		<SidebarButtons IsXsOrSm="true" />
+		<div class="d-print-none">
+			<SocialMediaButtons></SocialMediaButtons>
+		</div>
+	</div>
+
+
+	<div class="@MediaQuery.Md.DivClass">
+		<div class="row">
+			<div class="col-7">
+				<Intro MediaQuery="MediaQuery.Md" />
+			</div>
+
+			<div class="col-5">
+				<SidebarButtons IsXsOrSm="false" />
+				<div class="d-print-none">
+					<SocialMediaButtons></SocialMediaButtons>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="@MediaQuery.LgOrXl.DivClass">
+		<div class="row">
+
+			<div class="col-8">
+				<Intro MediaQuery="MediaQuery.Lg" />
+			</div>
+
+			<div class="col-4">
+				<SidebarButtons IsXsOrSm="false" />
+				<div class="d-print-none">
+					<SocialMediaButtons></SocialMediaButtons>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
 }
 
 
