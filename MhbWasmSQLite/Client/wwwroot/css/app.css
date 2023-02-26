@@ -131,6 +131,11 @@ h2.powelfont {
   font-family: "Powell Antique", serif, sans-serif;
 }
 
+.mhb-site-title {
+  font-weight: bold;
+  font-family: "Powell Antique", "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+}
+
 .fa-letter-aleph-tav:before {
   font-weight: bold;
   content: "את";

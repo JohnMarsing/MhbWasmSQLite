@@ -1,11 +1,7 @@
-﻿@page "/List"
-@using Page = MhbWasmSQLite.Client.Links.List
+﻿@page "/BibleList"
+@page "/List"
 
-<PageTitle>@Page.Title</PageTitle>
-
-<div class="pb-2 mt-4 mb-2 border-bottom">
-	<h2><i class="@Page.Icon"></i> @Page.Title</h2>
-</div>
+<PageHeader Page="@Enums.LinkEnum.BibleList" />
 
 <p class="text-danger">NOT DONE YET!</p>
 

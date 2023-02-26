@@ -1,14 +1,17 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace MhbWasmSQLite.Client.Features.Sitemap.Enums;
+namespace MhbWasmSQLite.Client.Enums;
 
 public abstract class LinkEnum : SmartEnum<LinkEnum>
 {
 	#region Id's
 	private static class Id
 	{
-		internal const int ParashaCurrent = 1;
+		internal const int Home = 13;
+		internal const int About = 14;
+		internal const int Parasha = 1;
 		/*
+				internal const int ParashaCurrent = 1;
 				internal const int BookChapter = 2;
 				internal const int VerseList = 3;
 				internal const int VersesCsv = 4;
@@ -20,11 +23,12 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 		internal const int BibleList = 9;
 		internal const int Teaching = 10;
 		internal const int Sitemap = 11;
+		internal const int BibleSearch = 12;
 	}
 	#endregion
 
 	#region  Declared Public Instances
-	public static readonly LinkEnum ParashaCurrent = new ParashaCurrentSE();
+	public static readonly LinkEnum Parasha = new ParashaSE();
 
 	/*
 	public static readonly LinkEnum BookChapter = new BookChapterSE();
@@ -38,6 +42,9 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	public static readonly LinkEnum BibleList = new BibleListSE();
 	public static readonly LinkEnum Teaching = new TeachingSE();
 	public static readonly LinkEnum Sitemap = new SitemapSE();
+	public static readonly LinkEnum BibleSearch = new BibleSearchSE();
+	public static readonly LinkEnum Home = new HomeSE();
+	public static readonly LinkEnum About = new AboutSE();
 	#endregion
 
 	private LinkEnum(string name, int value) : base(name, value)  // Constructor
@@ -62,9 +69,9 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	#endregion
 
 	#region Private Instantiation
-	private sealed class ParashaCurrentSE : LinkEnum
+	private sealed class ParashaSE : LinkEnum
 	{
-		public ParashaCurrentSE() : base($"{nameof(Id.ParashaCurrent)}", Id.ParashaCurrent) { } 
+		public ParashaSE() : base($"{nameof(Id.Parasha)}", Id.Parasha) { } 
 		public override string Index => "Parasha";
 		public override string Title => "Parasha";
 		public override string Icon => "far fa-bookmark";
@@ -110,7 +117,7 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	private sealed class ArticleSE : LinkEnum
 	{
 		public ArticleSE() : base($"{nameof(Id.Article)}", Id.Article) { }
-		public override string Index => "Articles";
+		public override string Index => "Article";
 		public override string Title => "Articles";
 		public override string Icon => "far fa-newspaper";
 		public override string ShortTitle => "";
@@ -144,7 +151,8 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	private sealed class AlephTavsSE : LinkEnum
 	{
 		public AlephTavsSE() : base($"{nameof(Id.AlephTavs)}", Id.AlephTavs) { }
-		public override string Index => "AlephTavs";
+		//public override string Index => "AlephTav/Introduction";
+		public override string Index => "AlephTav/";
 		public override string Title => "Aleph Tav's";
 		public override string Icon => "fa-letter-aleph-tav";
 		public override string ShortTitle => "";
@@ -156,8 +164,8 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	private sealed class BibleListSE : LinkEnum
 	{
 		public BibleListSE() : base($"{nameof(Id.BibleList)}", Id.BibleList) { }
-		public override string Index => "List";
-		public override string Title => "List";
+		public override string Index => "BibleList";
+		public override string Title => "Bible List";
 		public override string Icon => "fas fa-torah";
 		public override string ShortTitle => "";
 		public override string HomeTitleSuffix => " Mispar H4557 ";
@@ -186,12 +194,53 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 		public override string HomeFloatRightHebrew => "נָהַל";
 	}
 
+	private sealed class BibleSearchSE : LinkEnum
+	{
+		public BibleSearchSE() : base($"{nameof(Id.BibleSearch)}", Id.BibleSearch) { }
+		public override string Index => "BibleSearch";
+		public override string Title => "Bible Search";
+		public override string Icon => "fas fa-search";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " Bawkar H1239";
+		public override string HomeFloatRightHebrew => "בָּקַר";
+	}
+
+	private sealed class HomeSE : LinkEnum
+	{
+		public HomeSE() : base($"{nameof(Id.Home)}", Id.Home) { }
+		public override string Index => "/";
+		public override string Title => "Home | MHB";
+		public override string Icon => "fas fa-home";
+		public override string ShortTitle => "My Heb. Bib.";
+		//	public const string Acronym = "M. H. B.";
+		public override string HomeTitleSuffix => " bayit H1004";
+		public override string HomeFloatRightHebrew => "בַּיִת";
+	}
+
+	private sealed class AboutSE : LinkEnum
+	{
+		public AboutSE() : base($"{nameof(Id.About)}", Id.About) { }
+		public override string Index => "About";
+		public override string Title => "About";
+		public override string Icon => "fas fa-info";  //fas fa-question
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " Odot H182";
+		public override string HomeFloatRightHebrew => "אוֹדוֹת";
+	}
+
 	//
 
 	#endregion
 }
 
 /*
+public static class BibleSearch
+{
+	public const string Index = "/BibleSearch";
+	public const string Title = "Bible Search";
+	public const string Icon = "fas fa-search";  //fas fa-bible
+}
+
 		public const string FaVerses = "fa fa-bookmark";
 		public const string FaVerse = "fa fa-bookmark";
 		public const string FaMultiVerseCsv = "fa fa-search-plus";

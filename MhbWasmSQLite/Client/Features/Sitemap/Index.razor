@@ -1,22 +1,14 @@
 ﻿@page "/Sitemap"
-@using Page = MhbWasmSQLite.Client.Links.Sitemap
-
-@using MhbWasmSQLite.Client.Features.Sitemap.Enums
-
-<PageTitle>@Page.Title</PageTitle>
-
-<div class="pb-2 mt-4 mb-2 border-bottom">
-	<h2><i class="@Page.Icon"></i> @Page.Title</h2>
-</div>
+<PageHeader Page="@Enums.LinkEnum.Sitemap" />
 
 
 <div class="h4 mb-3">
 	<ul class="fa-ul">
 
-		@foreach (var item in MhbWasmSQLite.Client.Features.Sitemap.Enums.LinkEnum
+		@foreach (var item in Enums.LinkEnum
 		.List
 		.OrderBy(o => o.Value)
-		.Where(w => w.Value != Sitemap.Enums.LinkEnum.Sitemap.Value)
+		.Where(w => w.Value != Enums.LinkEnum.Sitemap.Value)
 		)
 		{
 			<li>
@@ -28,4 +20,3 @@
 	</ul>
 </div>
 
-<BackHomeButton />

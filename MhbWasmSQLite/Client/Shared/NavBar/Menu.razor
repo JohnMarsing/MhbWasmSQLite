@@ -1,5 +1,4 @@
-﻿@using Page = MhbWasmSQLite.Client.Links
-
+﻿
 <nav id="menu" class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 @Color">
 	<div class="container">
 		<HomeButton></HomeButton>
@@ -15,23 +14,23 @@
 
 
 				<li class="nav-item">
-					<a class="nav-link @TextColor" href="@Page.BibleSearch.Index">
-						<i class="@Page.BibleSearch.Icon" aria-hidden="true"></i>
-						@Page.BibleSearch.Title
+					<a class="nav-link @TextColor" href="@Enums.LinkEnum.BibleSearch.Index">
+						<i class="@Enums.LinkEnum.BibleSearch.Icon" aria-hidden="true"></i>
+						@Enums.LinkEnum.BibleSearch.Title
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link @TextColor" href="@Page.Counter.Index">
-						<i class="@Page.Counter.Icon" aria-hidden="true"></i>
-						@Page.Counter.Title
+					<a class="nav-link @TextColor" href="@Enums.LinkEnum.Parasha.Index">
+						<i class="@Enums.LinkEnum.Parasha.Icon" aria-hidden="true"></i>
+						@Enums.LinkEnum.Parasha.Title
 					</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link @TextColor" href="@Page.Fetchdata.Index">
-						<i class="@Page.Fetchdata.Icon" aria-hidden="true"></i>
-						@Page.Fetchdata.Title
+					<a class="nav-link @TextColor" href="@Enums.LinkEnum.Article.Index">
+						<i class="@Enums.LinkEnum.Article.Icon" aria-hidden="true"></i>
+						@Enums.LinkEnum.Article.Title
 					</a>
 				</li>
 
@@ -40,3 +39,4 @@
 		</div>
 	</div>
 </nav>
+

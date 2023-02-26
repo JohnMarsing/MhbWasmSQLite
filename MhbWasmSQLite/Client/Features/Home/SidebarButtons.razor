@@ -1,10 +1,11 @@
 ﻿
-@foreach (var item in MhbWasmSQLite.Client.Features.Sitemap.Enums.LinkEnum
-		.List
-		.OrderBy(o => o.Value))
+@foreach (var item in Enums.LinkEnum
+	.List
+	.OrderBy(o => o.Value)
+	.Where(w => w.Value != Enums.LinkEnum.Home.Value))
 {
 	<a href="@item.Index" title="@item.Title @item.HomeTitleSuffix"
-	 class="list-group-item list-group-item-primary ">
+	 class="list-group-item list-group-item-warning ">
 		<div class="d-flex w-100 justify-content-between">
 			<i class="@item.Icon fa-fw fa-3x" aria-hidden="true"></i>
 			<span class="@TitleCSS">@item.Title</span>

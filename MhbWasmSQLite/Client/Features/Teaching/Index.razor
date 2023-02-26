@@ -1,13 +1,71 @@
 ﻿@page "/Teaching"
-@using Page = MhbWasmSQLite.Client.Links.Teaching
 
-<PageTitle>@Page.Title</PageTitle>
+<PageHeader Page="@Enums.LinkEnum.Teaching" />
 
-<div class="pb-2 mt-4 mb-2 border-bottom">
-	<h2><i class="@Page.Icon"></i> @Page.Title</h2>
+@*
+<div class="pull-right">
+	<ol class="breadcrumb">
+		<li><a href="/Home">Home</a></li>
+		<li class="active">Teaching</li>
+	</ol>
+</div>
+*@
+
+
+<div class="list-group">
+
+	<a asp-page=""></a>
+
+@*	<a class="list-group-item" asp-page="@Anchors.Teaching.TwoHouse">
+		<i class="fa fa-number-two fa-2x"></i><i class="fa fa-letter-bet fa-2x"></i><i class="fa fa-number-one fa-2x"></i><i class="fa fa-letter-tav fa-2x"></i>
+		&nbsp;<b>#1 Two House</b> One Covenant (2H1C)
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>
+
+	<a class="list-group-item" asp-page="@Anchors.Teaching.CovenantsAndContracts">
+		<i class="fa fa-letter-tav fa-2x"></i>
+		&nbsp;<b>#2</b>: Covenants and Contracts
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>*@
+
+	<a class="list-group-item" href="#">
+		<i class="fa fa-question fa-2x"></i>
+		&nbsp;<b>#3</b>: Biblical Banking<small class="text-muted"> Place Holder - Not Done</small>
+		<small>Add to this article #553, Treasures in Heaven.  see also #493</small>
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>
+
+	<a class="list-group-item" href="#">
+		<i class="fa fa-question fa-2x"></i>
+		&nbsp;<b>#4</b>: Torah Gated Community<small class="text-muted"> Place Holder - Not Done</small>
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>
+
+	<a class="list-group-item" href="#">
+		<i class="fa fa-question fa-2x"></i>
+		&nbsp;<b>#5</b>: The failure of W. F. Buckley Conservatism <small class="text-muted"> Place Holder - Not Done</small>
+		<small>Add to this article #800, Natural Law Critique, and article #2 Shomer Habrit</small>
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>
+
+	<a class="list-group-item" href="#">
+		<i class="fa fa-question fa-2x"></i>
+		&nbsp;<b>#6</b>: Marsing's Rules <small class="text-muted">Place Holder - Not Done</small>
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>
+
+@*	<a class="list-group-item" asp-page="@Anchors.Teaching.Identity">
+		<i class="fa fa-hand-o-right fa-2x"></i>
+		&nbsp;<b>#7</b>: Identity
+		<span class="pull-right"><i class="fa fa-chevron-circle-right fa-2x"></i></span>
+	</a>*@
+
 </div>
 
-<p class="text-danger">NOT DONE YET!</p>
+@* <span class="badge">5</span>  *@
+
+
+
 
 @code {
 
