@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
-using MhbWasmSQLite.Client.Shared.Header.Enums;
 using Fluxor;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public partial class BibleSearch
 {

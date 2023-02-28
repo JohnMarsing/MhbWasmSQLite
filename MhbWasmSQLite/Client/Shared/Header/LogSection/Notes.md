@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using MhbWasmSQLite.Client.Helpers;
 using System;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Shared.Header.LogSection;
 
 public partial class ProfileAnchor
 {

@@ -1,8 +1,8 @@
-using MhbWasmSQLite.Client.Shared.Header.Enums;
+using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
 using Microsoft.AspNetCore.Components;
 using Fluxor;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public partial class PrevNextButton
 {

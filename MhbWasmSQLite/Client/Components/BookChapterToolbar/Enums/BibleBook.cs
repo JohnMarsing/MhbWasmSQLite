@@ -1,6 +1,6 @@
 ﻿using Ardalis.SmartEnum;
 
-namespace MhbWasmSQLite.Client.Shared.Header.Enums;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
 
 public enum BookGroupEnum
 {

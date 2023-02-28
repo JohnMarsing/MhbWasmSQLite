@@ -1,8 +1,5 @@
 ﻿@inherits Fluxor.Blazor.Web.Components.FluxorComponent
 
-@*@if (@State!.Value.PrevNextButton != null)
-{}*@
-
 @if (@State!.Value.PrevNextButton!.PrevBibleBook!.ThereIsNone == false)
 {
 	<button type="button" class="btn btn-outline-primary"
@@ -18,9 +15,6 @@
 	<br /><small>Clear</small>
 </button>
 
-
-@*@if (@State!.Value.PrevNextButton != null)
-{}*@
 
 @if (@State!.Value.PrevNextButton!.NextBibleBook!.ThereIsNone == false)
 {

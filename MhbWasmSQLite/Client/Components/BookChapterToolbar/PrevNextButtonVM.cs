@@ -1,7 +1,7 @@
-﻿using MhbWasmSQLite.Client.Shared.Header.Enums;
+﻿using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
 using MhbWasmSQLite.Shared;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public class PrevNextButtonVM
 {

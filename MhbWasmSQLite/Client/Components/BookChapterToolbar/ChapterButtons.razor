@@ -1,0 +1,48 @@
+﻿@using MhbWasmSQLite.Client.Enums
+
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
+@if (State!.Value.ShowChapters)
+{
+	if (State.Value.BibleBook is not null)
+	{
+		@switch (_status)
+		{
+			case Status.Loading:
+				
+				break;
+
+			case Status.Loaded:
+
+				@foreach (var r in ButtonRows)
+				{
+					<div class="btn-group btn-group-sm" role="group" aria-label="Basic outlined example">
+
+						@for (int i = r.ChapterStart; i <= r.ChapterEnd; i++)
+						{
+							int iLocal = i;
+
+							<button type="button" class="btn btn-outline-info font-monospace"
+								@onclick="@(e => ButtonClick(@iLocal))">
+
+								@((MarkupString)ButtonNumber(i))
+
+							</button>
+						}
+
+					</div>
+				}
+				break;
+
+			case Status.Error:
+				<h4 class="text-danger mt-5">Error no data gotten</h4>
+				<p class="">Error...</p>
+				<p class="p-2">@_msg</p>
+				break;
+
+			default:
+				break;
+		}
+
+	}
+}

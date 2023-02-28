@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Fluxor;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public partial class BookChapterDisplay
 {

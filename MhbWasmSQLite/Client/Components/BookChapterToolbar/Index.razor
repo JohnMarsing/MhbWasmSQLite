@@ -1,6 +1,6 @@
 ﻿@using static MhbWasmSQLite.Client.Shared.Header.LogSection.Account
 @using MhbWasmSQLite.Client.Shared
-@using MhbWasmSQLite.Client.Shared.Header.Enums
+@using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums
 @using MhbWasmSQLite.Client.Enums
 @using MhbWasmSQLite.Client.Shared.NavBar
 
@@ -75,7 +75,25 @@
 
 			@if (State!.Value.BibleBook != null)
 			{
-				<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" />
+				<div class="@MediaQuery.Xs.DivClass">
+					<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" ButtonsPerRow="10" />
+				</div>			<!-- Xs -->
+
+				<div class="@MediaQuery.Sm.DivClass">
+					<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" ButtonsPerRow="15" />
+				</div>				<!-- Sm -->
+
+				<div class="@MediaQuery.Md.DivClass">
+					<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" ButtonsPerRow="20" />
+				</div>				<!-- Md -->
+
+				<div class="@MediaQuery.Lg.DivClass">
+					<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" ButtonsPerRow="20" />
+				</div>			<!-- Lg -->
+
+				<div class="@MediaQuery.Xl.DivClass">
+					<ChapterButtons CurrentBibleBook="@State!.Value.BibleBook" ButtonsPerRow="30" />
+				</div>			<!-- Xl -->
 			}
 		</div>
 	</div>

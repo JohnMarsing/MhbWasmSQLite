@@ -5,9 +5,9 @@ using Microsoft.Extensions.Logging;
 using MhbWasmSQLite.Shared;
 using System.Reflection;
 using MhbWasmSQLite.Client.Enums;
-using MhbWasmSQLite.Client.Shared.Header.Enums;
+using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 // 1. Action
 public record SetBibleBook_Action(BibleBook? BibleBook);  //Enums.BibleBook BibleBook
@@ -16,17 +16,17 @@ public record SetChapter_Action(int Chapter);
 public record ShowChapters_Action(bool IsVisible);
 public record ShowVerses_Action(bool IsVisible);
 
-public record GetVerses_Action(Enums.BibleBook BibleBook, int ChapterId);
+public record GetVerses_Action(BibleBook BibleBook, int ChapterId);
 public record GetVersesSuccess_Action(List<ScriptureVM> Scriptures, PrevNextButtonVM PrevNextButton);
 public record GetVersesFailure_Action(string ErrorMessage);
 public record GetVersesWarning_Action(string WarningMessage);
 
-public record SetPrevNext_Action(Enums.BibleBook BibleBook, int Chapter);
+public record SetPrevNext_Action(BibleBook BibleBook, int Chapter);
 
 // 2. State
 public record State
 {
-	public Enums.BibleBook? BibleBook { get; init; }
+	public BibleBook? BibleBook { get; init; }
 	public string? SuccessMessage { get; init; }
 	public string? WarningMessage { get; init; }
 	public string? ErrorMessage { get; init; }

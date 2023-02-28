@@ -1,7 +1,7 @@
 using Fluxor;
 using Microsoft.AspNetCore.Components;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public partial class Index
 {

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Blazored.Toast.Services;
 
-namespace MhbWasmSQLite.Client.Shared.Header;
+namespace MhbWasmSQLite.Client.Components.BookChapterToolbar;
 
 public partial class ToasterBibleSearch
 {
