@@ -1,19 +1,21 @@
-﻿@*@page "/Teaching."*@
+﻿@page "/Teaching/CovenantsAndContracts"
 
-@*<dil class="pull-right">
-	<ol class="breadcrumb">
-		<li><a href="/">Home</a></li>
-		<li><a href="/Teaching">Teaching</a></li>
-		<li class="active">Covenants and Contracts</li>
-	</ol>
-</dil>*@
+@using Page = MhbWasmSQLite.Client.Features.Teaching.BreadCrumbLinks
 
-@*<div class="page-header">
-	<h3>
-		<i class="fa fa-letter-tav"></i>  @ViewData["Title"]
-	</h3>
-	<small>My notes on a favorite subject of mine Covenants and Contracts</small>
-</div>*@
+<PageTitle>@Page.CovenantsAndContracts.Title</PageTitle>
+
+<BreadCrumbs Href="@Page.Parent.Index" 
+						 ParentTitle="@Page.Parent.Title" 
+						 Title="@Page.CovenantsAndContracts.Title" 
+						 IconMarkup="@Page.CovenantsAndContracts.IconMarkup"
+						 ParentPage="@Enums.LinkEnum.Teaching">
+</BreadCrumbs>
+
+
+@*
+ MhbWasmSQLite.Client.Enums.LinkEnum
+<PageHeader Page="@Enums.LinkEnum.Teaching" />
+*@
 
 Task 1194 Contracts and Covenants Study with John 4.3.2018
 

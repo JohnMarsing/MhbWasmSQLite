@@ -1,0 +1,25 @@
+﻿
+@if (IsValid)
+{
+	<ol class="breadcrumb">
+		<li>
+			<i class="fas fa-chevron-left"></i>&nbsp;
+			<a href='@Href'> @ParentTitle</a>
+		</li>
+	</ol>
+
+@*
+	ToDo: can I use <PageHeader or maybe a <SubPageHeader
+	<PageHeader Page="@Enums.LinkEnum.Teaching" />
+*@
+
+	<div class="pb-2 mt-4 mb-2 border-bottom">
+		@*<h2><span class="text-warning @Icon"></span> @Title</h2>*@
+		<h2> @IconMarkup @Title</h2>
+	</div>
+
+}
+else
+{
+	<small>bread crumb invalid</small>
+}

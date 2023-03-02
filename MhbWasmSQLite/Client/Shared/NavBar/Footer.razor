@@ -1,52 +1,19 @@
-﻿@*<div class="d-print-none">
+﻿@*
+<div class="d-print-none">
 	<img src=@Blobs.UrlRoot("footer.jpg") class="img-fluid" />
 </div>
 <div class="d-none d-print-block">
 	<img src=@Blobs.UrlRoot("bannerline.png") class="img-fluid" />
 </div>
-
-
-<footer>
-	<div class="container-fluid bg-light">
-		<div class="p-2 mt-3 mb-1">
-
-			<div class="d-print-none">
-				<div class="row">
-					<div class="col-6">
-						<small><sup>&copy; @DateTime.Now.Year - AEAIJ, a <a href="http://en.wikipedia.org/wiki/Religious_corporation">Religious Corporation Sole</a></sup></small>
-					</div>
-					<div class="col-6">
-						<small class="float-end"><sup>MyHebrewBible is the creation and intellectual property of John Marsing</sup></small>
-					</div>
-				</div>
-			</div>
-
-			<div class="d-none d-print-block">
-				<div class="row">
-					<div class="col-6">
-						<small><sup>&copy; @DateTime.Now.Year - AEAIJ, a Religious Corporation Sole</sup></small>
-
-						<div class="col-6">
-							<small class="float-end"><sup>MyHebrewBible is the creation and intellectual property of John Marsing</sup></small>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
-</footer>
 *@
 
 
+@*text-lg-start*@
+<footer class="text-center bg-light text-muted w-100 mt-3">
 
-
-<!-- Footer -->
-
-<footer class="text-center text-lg-start bg-light text-muted">
 	<!-- Section: Social media -->
 	<section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
 		<!-- Left -->
 		<div class="me-5 d-none d-lg-block">
 			<span>Get connected with us on social networks:</span>
@@ -54,102 +21,75 @@
 		<!-- Left -->
 		<!-- Right -->
 		<div>
-			<a href="" class="me-4 text-reset">
-				<i class="fab fa-facebook-f"></i>
-			</a>
-			<a href="" class="me-4 text-reset">
+			<a href="https://twitter.com/MyHebrewBible"
+				 class="me-4 text-reset" title="twitter" target="_blank">
 				<i class="fab fa-twitter"></i>
 			</a>
-			<a href="" class="me-4 text-reset">
-				<i class="fab fa-google"></i>
+			<a href="https://gab.com/JohnMarsing" class="me-4 text-reset">
+				<i class="fab fa-gofore" title="Gab" target="_blank"></i>
 			</a>
-			<a href="" class="me-4 text-reset">
-				<i class="fab fa-instagram"></i>
+			<a href=""
+				 class="me-4 text-reset" title="Rumble" target="_blank">
+				<i class="fas fa-recycle"></i>
 			</a>
-			<a href="" class="me-4 text-reset">
-				<i class="fab fa-linkedin"></i>
+			<a href=""
+				 class="me-4 text-reset" title="YouTube" target="_blank">
+				<i class="fab fa-youtube"></i>
 			</a>
-			<a href="" class="me-4 text-reset">
+			<a href="https://github.com/JohnMarsing/MyHebrewBible"
+				 class="me-4 text-reset" title="GitHub" target="_blank">
 				<i class="fab fa-github"></i>
 			</a>
-		</div>
-		<!-- Right -->
-	</section>
-	<!-- Section: Social media -->
-	<!-- Section: Links  -->
+			<a href=""
+				 class="me-4 text-reset" title="Clipboard" target="_blank">
+				<i class="fas fa-clipboard"></i>
+			</a>
+
+		</div><!-- Right -->
+	</section> <!-- Section: Social media -->
+	
+	<!-- Section: AEAIJ copyright Beg  -->
 	<section class="">
-		<div class="container text-center text-md-start mt-5">
-			<!-- Grid row -->
-			<div class="row mt-3">
-				<!-- Grid column -->
-				<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-					<!-- Content -->
-					<h6 class="text-uppercase fw-bold mb-4">
-						<i class="fas fa-gem me-3"></i>Company name
-					</h6>
-					<p>
-						expanding columns
-					</p>
+		<div class="container-fluid bg-light">
+			<div class="p-2 mt-3 mb-1">
+
+				<div class="d-print-none">
+					<div class="row">
+						<div class="col-6 text-start">
+							<small><sup>&copy; @DateTime.Now.Year - AEAIJ, a <a href="http://en.wikipedia.org/wiki/Religious_corporation">Religious Corporation Sole</a></sup></small>
+						</div>
+						<div class="col-6 text-end">
+							<small class=""><sup>MyHebrewBible is the creation and intellectual property of John Marsing</sup></small>
+						</div>
+					</div>
 				</div>
-				<!-- Grid column -->
-				<!-- Grid column -->
-				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-					<!-- Links -->
-					<h6 class="text-uppercase fw-bold mb-4">
-						Products
-					</h6>
-					<p>
-						<a href="#!" class="text-reset">Angular</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">React</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">Vue</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">Laravel</a>
-					</p>
+
+				<div class="d-none d-print-block">
+					<div class="row">
+						<div class="col-6 test-start">
+							<small><sup>&copy; @DateTime.Now.Year - AEAIJ, a Religious Corporation Sole</sup></small>
+						</div>
+						<div class="col-6 test-end">
+							<small class=""><sup>MyHebrewBible is the creation and intellectual property of John Marsing</sup></small>
+						</div>
+						
+					</div>
 				</div>
-				<!-- Grid column -->
-				<!-- Grid column -->
-				<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-					<!-- Links -->
-					<h6 class="text-uppercase fw-bold mb-4">
-						Useful links
-					</h6>
-					<p>
-						<a href="#!" class="text-reset">Pricing</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">Settings</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">Orders</a>
-					</p>
-					<p>
-						<a href="#!" class="text-reset">Help</a>
-					</p>
-				</div>
-				<!-- Grid column -->
-				<!-- Grid column -->
-				<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-					<!-- Links -->
-					<h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-					<p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-					<p>
-						<i class="fas fa-envelope me-3"></i>
-						info@example.com
-					</p>
-					<p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-					<p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-				</div>
-				<!-- Grid column -->
+
 			</div>
-			<!-- Grid row -->
 		</div>
-	</section>
-	<!-- Section: Links  -->
+	</section>	<!-- Section: AEAIJ copyright End  -->
+
 </footer>
-<!-- Footer -->
+
+@*
+	### `text-reset`
+	- Reset a text or link’s color so that it inherits the color from its parent.
+	- [Docs](https://getbootstrap.com/docs/5.0/utilities/text/#reset-color)
+
+ ### `text-lg-start`
+ - I don't know what this does
+ - [Docs](https://getbootstrap.com/docs/5.0/utilities/text/#text-alignment)
+*@
+
 

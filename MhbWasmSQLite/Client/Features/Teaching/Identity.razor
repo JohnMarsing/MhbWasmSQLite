@@ -1,24 +1,26 @@
-﻿@*@page "Teachings.Identity"*@
+﻿@page "/Teaching/Identity"
 
 @*http://onemilliontracts-com.3dcartstores.com/Get-Out-Of-Hell-Free-Chance-Gospel-Tract--100ct-pckg-2-x-3-12_p_138.html*@
 
-@*<dil class="pull-right">
-	<ol class="breadcrumb">
-		<li><a href="/">Home</a></li>
-		<li><a href="/Teaching">Teaching</a></li>
-		<li class="active">Identity</li>
-	</ol>
-</dil>*@
+@using Page = MhbWasmSQLite.Client.Features.Teaching.BreadCrumbLinks
 
-@*<div class="page-header">
+<PageTitle>@Page.Identity.Title</PageTitle>
 
-	<h3>
-		<i class="fa fa-hand-o-right"></i>  @ViewData["Title"]
-	</h3>
-	<small>My notes on the topic of Identity (August 4<sup>th</sup> 2018) <sup class="pull-right">Who are you! Who the blessed are you!</sup></small>
+<BreadCrumbs Href="@Page.Parent.Index"
+						 ParentTitle="@Page.Parent.Title"
+						 Title="@Page.Identity.Title"
+						 IconMarkup="@Page.Identity.IconMarkup"
+						 ParentPage="@Enums.LinkEnum.Teaching">
+</BreadCrumbs>
 
-</div>
+@*
+ MhbWasmSQLite.Client.Enums.LinkEnum
+<PageHeader Page="@Enums.LinkEnum.Teaching" />
+
+<small>My notes on the topic of Identity (August 4<sup>th</sup> 2018) <sup class="float-right">Who are you! Who the blessed are you!</sup></small>
 *@
+
+
 <p>
 	I decided to do this topic after the work I have been put in to modifying the LMM website so that it can better manage Sukkot registration.
 	From a technical point of view what was needed to pull this off was a couple of things…a database and the ability to manage logins i.e. peoples identity.
@@ -58,11 +60,5 @@
 
 	</li>
 
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-	<li></li>
-
+	<li>...</li>
 </ol>

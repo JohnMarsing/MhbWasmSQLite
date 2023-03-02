@@ -2,6 +2,15 @@
 
 namespace MhbWasmSQLite.Client.Enums;
 
+public enum TeachingLinkEnum  // LinkEnumSubPage
+{
+	Parent = 1,
+	CovenantAndContracts = 2,
+	TwoHouse = 2,
+
+}
+
+
 public abstract class LinkEnum : SmartEnum<LinkEnum>
 {
 	#region Id's

@@ -8,13 +8,15 @@
 		<Menu UseDarkMode="true"></Menu>
 	</header>
 
+	<!-- Bible Search Toolbar BEG <div>	</div>-->
+	<div class="top-row w-100">
+		<Index />
+	</div>
+	<!-- Bible Search Toolbar End-->
+
+
 	<div class="container">
 		<div class="main">
-			<div class="top-row px-0">
-				<Index />
-				<BlazoredToasts />
-			</div>
-
 			<div class="content px-1">
 				@Body
 			</div>
@@ -22,14 +24,14 @@
 
 		@*
 		<BlazoredToasts />
-			This causes an infinite loop when looking at the Redux tab
-			<StateLoader />
+		This causes an infinite loop when looking at the Redux tab
+		<StateLoader />
 		*@
 
 	</div>
 
-	<footer class="text-muted w-100">
-		<Footer />
-	</footer>
+	<Footer />
+	@*<FooterTemplate />*@
 
+	<BlazoredToasts />
 </div>
