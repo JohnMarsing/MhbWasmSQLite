@@ -33,6 +33,8 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 		internal const int Teaching = 10;
 		internal const int Sitemap = 11;
 		internal const int BibleSearch = 12;
+		internal const int HomeMhbVer6 = 13;
+		
 	}
 	#endregion
 
@@ -54,6 +56,7 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 	public static readonly LinkEnum BibleSearch = new BibleSearchSE();
 	public static readonly LinkEnum Home = new HomeSE();
 	public static readonly LinkEnum About = new AboutSE();
+	public static readonly LinkEnum HomeMhbVer6 = new HomeMhbVer6SE();
 	#endregion
 
 	private LinkEnum(string name, int value) : base(name, value)  // Constructor
@@ -224,6 +227,17 @@ public abstract class LinkEnum : SmartEnum<LinkEnum>
 		//	public const string Acronym = "M. H. B.";
 		public override string HomeTitleSuffix => " bayit H1004";
 		public override string HomeFloatRightHebrew => "בַּיִת";
+	}
+
+	private sealed class HomeMhbVer6SE : LinkEnum
+	{
+		public HomeMhbVer6SE() : base($"{nameof(Id.HomeMhbVer6)}", Id.HomeMhbVer6) { }
+		public override string Index => "/HomeMhbVer6";
+		public override string Title => "HomeMhbVer6 | MHB"; 
+		public override string Icon => "fas fa-history";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => "";
+		public override string HomeFloatRightHebrew => "";
 	}
 
 	private sealed class AboutSE : LinkEnum
