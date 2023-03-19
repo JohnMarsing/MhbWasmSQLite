@@ -96,7 +96,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.Prophets"
 					 asp-fragment="Jer_3_6_to_12">Jeremiah 3:6-12</a>
 			</td>
@@ -107,7 +107,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.Prophets"
 					 asp-fragment="Jer_31_31_to_34">Jeremiah 31:31-34</a>
 
@@ -119,7 +119,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.Prophets"
 					 asp-fragment="Eze_37_15_to_17">Ezekiel 37:15-17</a>
 			</td>
@@ -130,7 +130,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.Prophets"
 					 asp-fragment="Hos_1_1_to_11">Hosea 1:1-11</a>
 			</td>
@@ -141,7 +141,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Mat_5_17_to_20">Matthew 5:17-20</a>
 			</td>
@@ -152,7 +152,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Mat_10_5_to_7">Matthew 10:5-7</a>
 			</td>
@@ -163,7 +163,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Mat_15_24">Matthew 15:24</a>
 			</td>
@@ -174,7 +174,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Mat_22_37_to_40">Matthew 22:37-40</a>
 			</td>
@@ -185,7 +185,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Joh_14_15">John 14:15</a>
 			<td>
@@ -195,7 +195,7 @@
 
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Gal_3_28_to_29">Galatians 3:28-29</a>
 			</td>
@@ -205,7 +205,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Eph_2_12_to_19">Ephesians 2:12-19</a>
 			</td>
@@ -215,7 +215,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Ti2_2_15">2 Timothy 2:15</a>
 			</td>
@@ -225,7 +225,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Jam_1_27">James 1:27</a>
 			</td>
@@ -235,7 +235,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Pe1_2_9_to_10">1<sup>st</sup>Peter 2:9-10</a>
 			</td>
@@ -245,7 +245,7 @@
 		</tr>
 		<tr>
 			<td>
-				<a asp-page="@Anchors.FavoriteVerses.PageIndexFromRoot"
+				<a href="@Anchors.FavoriteVerses.PageIndexFromRoot"
 					 asp-route-scrollSpy="@MyHebrewBible.Global.Enum.ScrollSpy.NewTestament"
 					 asp-fragment="Rev_21_24_to_27">Revelation 21:24-27</a>
 			</td>
@@ -261,36 +261,36 @@
 <ol>
 	<li>
 		Two-Houses-Judah-and-Ephraim
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1337">#1337</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1337">#1337</a>
 	</li>
 	<li>
 		Salvation-Theology-of-Antinomian-Christianity-A-Critique
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="591">#591</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="591">#591</a>
 	</li>
 	<li>
 		Ephesians-2-middle-wall-of-partition-Eph-2-11-22
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="579">#579</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="579">#579</a>
 	</li>
 	<li>
 		Eze-36-29-and-37-23-only-places-where-salvation-is-in-regards-to-sin
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="845">#845</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="845">#845</a>
 	</li>
 
 	<li>
 		Eze-37-15-28-Valley-of-Dry-Bones-Vision
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1341">#1341</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1341">#1341</a>
 		<ul>
-			<li>Word-Study-H2673-chatsah-divide <a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1343">#1343</a></li>
+			<li>Word-Study-H2673-chatsah-divide <a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1343">#1343</a></li>
 		</ul>
 	</li>
 
 	<li>
 		Amo-03-Can-two-walk-together-occurs-after-the-Aleph-Tav-is-punished-for-our-iniquities
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1345">#1345</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1345">#1345</a>
 		<ul>
 			<li>
 				Word-Study-H3259-yaad-meet 
-				<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1347">#1347</a>
+				<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1347">#1347</a>
 			</li>
 		</ul>
 	</li>
@@ -298,32 +298,32 @@
 
 	<li>
 		Mic-05-they-shall-smite-the-Aleph-Tav-Judge-of-Israel-with-a-rod 
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1351">#1351</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1351">#1351</a>
 	</li>
 	<li>
 		Mic-06-Covenant-Lawsuit
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1349">#1349</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="1349">#1349</a>
 	</li>
 
 	<li>
 		Prince-of-Peace-Sar-Shalom
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="821">#821</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="821">#821</a>
 		<b>Note</b>, follow the link because I have a good introduction for this article
 		<ul>
 			<li>
 				Prince-of-Peace-Isaiah-9-6
-				<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="819">#819</a> (review first)
+				<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="819">#819</a> (review first)
 			</li>
 			<li>
 				Brit-Shalom-for-Judah-and-Ephraim
-				<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="790">#790</a>
+				<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="790">#790</a>
 			</li>
 		</ul>
 	</li>
 
 	<li>
 		Word Study G5498 <i>cheirographon</i> Col 2:14 Handwriting - the Bill of Divorce
-		<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="545">#545</a>
+		<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="545">#545</a>
 		<p>
 			<b>Thesis</b>: The Bill of Divorce, giving to the House of Israel, is what Paul is alluding to in Col 2:14.
 			It’s a legal term, which is great because that’s what I like to talk about as it brings clarity.
@@ -335,22 +335,22 @@
 	</li>
 
 	<li>
-		Zec 11 <a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="677">#677</a> (especially Zec 11:4-16)
+		Zec 11 <a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="677">#677</a> (especially Zec 11:4-16)
 	</li>
 
 	<li>
-		<i>Shomer-Habrit</i> <a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="2">#2</a>
+		<i>Shomer-Habrit</i> <a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="2">#2</a>
 	</li>
 
 	<li>
 		Many of these articles can be found here...
-		<a asp-page="@Anchors.Article.PagedListFromRoot" asp-route-pagenumber="1" asp-route-searchText="" asp-route-filterId="@MyHebrewBible.Global.Enums.ArticleQuery.Filter.Favorites"
+		<a href="@Anchors.Article.PagedListFromRoot" asp-route-pagenumber="1" asp-route-searchText="" asp-route-filterId="@MyHebrewBible.Global.Enums.ArticleQuery.Filter.Favorites"
 			 class="btn btn-sm btn-default">
 			<i class="text-danger fa fa-star" aria-hidden="true"></i>&nbsp; <span class="text-danger">Favorites Articles</span> <i class="fa fa-external-link-square"></i>
 		</a>
 	</li>
 	<li>
-		Reference: Marsing's Rules Article<a asp-page="@Anchors.Article.DetailsFromRoot" asp-route-blobId="501"> #501</a>
+		Reference: Marsing's Rules Article<a href="@Anchors.Article.DetailsFromRoot" asp-route-blobId="501"> #501</a>
 	</li>
 	<li>
 		<b>ToDo</b>: I need to write an article describing the root causes of why these two houses, Judah and Ephraim, and their respective religions, split apart.
