@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Features\FavoriteVerses\Content\Co1_7_20_to_24.razorl" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Features\FavoriteVerses\Content\Co1_7_20_to_24.razorl" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="7.0.0" />
     <PackageReference Include="Blazored.Toast" Version="4.0.0" />
     <PackageReference Include="Blazored.Typeahead" Version="4.7.0" />
