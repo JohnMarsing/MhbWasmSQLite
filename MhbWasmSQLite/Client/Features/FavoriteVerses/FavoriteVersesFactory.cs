@@ -14,8 +14,7 @@ public class FavoriteVersesFactory
 		 VerseDescription = "Creation", 
 		 Commentary = "Arguably the most important verse in scripture", 
 		 HasExtraInfo = true
-		 * 
-	 */
+		*/
 		return new List<FavoriteVerse>
 		 {
 			new FavoriteVerse() { PartialView = "Gen_1_1", ScriptureIdBeg = 1, ScriptureIdEnd = 1, BookID = 1, VerseName = "Genesis 1:1", VerseNameAbrv = "Gen 1:1", VerseDescription = "Creation", Commentary = "Arguably the most important verse in scripture", HasExtraInfo = true },

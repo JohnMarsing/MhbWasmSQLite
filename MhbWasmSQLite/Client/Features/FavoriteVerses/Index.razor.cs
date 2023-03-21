@@ -14,12 +14,17 @@ public partial class Index
 
 	protected List<FavoriteVerse>? Favorites;
 
+	private Type? selectedType;
+	private void ButtonClick(string partialView)
+	{
+		selectedType = partialView?.ToString()?.Length > 0 ? Type.GetType($"MhbWasmSQLite.Client.Features.FavoriteVerses.DetailContent.{partialView}") : null;
+	}
+
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
 		Logger!.LogDebug(string.Format("Inside {0}"
 			, nameof(Index) + "!" + nameof(OnInitialized)));
-
 
 		Favorites = FavoriteVersesFactory.GetAll().ToList();
 		try

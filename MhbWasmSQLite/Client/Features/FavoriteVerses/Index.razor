@@ -1,10 +1,18 @@
 ﻿@page "/FavoriteVerses"
-<PageHeader Page="@Enums.LinkEnum.FavoriteVerses" />
+<PageHeader Page="@MhbWasmSQLite.Client.Enums.LinkEnum.FavoriteVerses" />
 
 @using MhbWasmSQLite.Client.Enums
 @using MhbWasmSQLite.Client.Helpers
 
 <IntroductionContent />
+
+@if (selectedType is not null)
+{
+	<div class="border border-primary my-3 p-2">
+		<DynamicComponent Type="@selectedType" />
+	</div>
+}
+
 
 @switch (_status)
 {
@@ -29,12 +37,15 @@
 				<td class="">
 					@if (context.HasExtraInfo)
 					{
-						<p>PV: @context.PartialView</p>
+						<button type="button" class="btn btn-outline-info"
+							@onclick="@(e => ButtonClick(context.PartialView))">
+							@context.PartialView
+						</button>
 					}
 				</td>
 				<td class="">
 					<a href='https://MyHebrewBible.com/VerseByScriptureIdRange/@context.ScriptureIdBeg/@context.ScriptureIdEnd/slug'
-						target="_blank" title="@context.VerseNameAbrv BookId: @context.BookID">
+				 target="_blank" title="@context.VerseNameAbrv BookId: @context.BookID">
 						@context.VerseNameAbrv
 					</a>
 					<i class="fas fa-external-link-square-alt"></i>
