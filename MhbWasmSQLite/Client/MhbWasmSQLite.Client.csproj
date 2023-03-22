@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Features\FavoriteVerses\DetailCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="7.0.0" />
     <PackageReference Include="Blazored.Toast" Version="4.1.0" />
     <PackageReference Include="Blazored.Typeahead" Version="4.7.0" />
@@ -23,6 +27,18 @@
 
   <ItemGroup>
     <Folder Include="Features\FavoriteVerses\Content\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Features\FavoriteVerses\DetailCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Features\FavoriteVerses\DetailCard.razor" />
   </ItemGroup>
 
 </Project>

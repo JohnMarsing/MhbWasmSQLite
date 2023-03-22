@@ -1,10 +1,21 @@
 ﻿@page "/FavoriteVerses"
 <PageHeader Page="@MhbWasmSQLite.Client.Enums.LinkEnum.FavoriteVerses" />
 
-@using MhbWasmSQLite.Client.Enums
-@using MhbWasmSQLite.Client.Helpers
-
-<IntroductionContent />
+<div class="row">
+	<div class="col-9">
+		<DetailCard></DetailCard>
+	</div>
+	<div class="col-3">
+		<ul class="bg-light fs-6">
+			@foreach (var item in EnumsFV.Verses.List.OrderBy(o => o.Value).ToList())
+			{
+				<li class="">
+					<small>@item.VerseNameAbrv</small>
+				</li>
+			}
+		</ul>
+	</div>
+</div>
 
 @if (selectedType is not null)
 {
@@ -13,70 +24,7 @@
 	</div>
 }
 
+<IntroductionContent />
 
-@switch (_status)
-{
-	case Status.Loading:
-		<p class="fs-3">Loading...</p>
-		break;
 
-	case Status.Loaded:
 
-		<TableTemplate Items="Favorites">
-			<TableHeader>
-				<th class="text-info">Verse</th>
-				@*<th class="text-warning">Commentary</th>*@
-				<th class="text-warning">Description</th>
-				<th class="text-primary">Learn More</th>
-				<th class="text-danger">MHB...</th>
-			</TableHeader>
-			<RowTemplate>
-				<td>@context.VerseName</td>
-				@*<td>@context.Commentary.Truncate(25)...</td>*@
-				<td>@context.VerseDescription.Truncate(25)...</td>
-				<td class="">
-					@if (context.HasExtraInfo)
-					{
-						<button type="button" class="btn btn-outline-info"
-							@onclick="@(e => ButtonClick(context.PartialView))">
-							@context.PartialView
-						</button>
-					}
-				</td>
-				<td class="">
-					<a href='https://MyHebrewBible.com/VerseByScriptureIdRange/@context.ScriptureIdBeg/@context.ScriptureIdEnd/slug'
-				 target="_blank" title="@context.VerseNameAbrv BookId: @context.BookID">
-						@context.VerseNameAbrv
-					</a>
-					<i class="fas fa-external-link-square-alt"></i>
-				</td>
-			</RowTemplate>
-		</TableTemplate>
-		break;
-
-	case Status.Error:
-		<div class="card mt-2">
-			<div class="card-header h3 px-2">
-				<span class='badge bg-warning pb-15'>No Data Gotten</span>
-
-				@if (!String.IsNullOrEmpty(@_msg))
-				{
-					<div class="card-body">
-						<h5 class="card-title mt-3">Footnotes</h5>
-					</div>
-					<p class="card-text fs-5">
-						@_msg
-					</p>
-
-				}
-				else
-				{
-					<p class="card-text fs-5">...No Message</p>
-				}
-			</div>
-		</div>
-		break;
-
-	default:
-		break;
-}

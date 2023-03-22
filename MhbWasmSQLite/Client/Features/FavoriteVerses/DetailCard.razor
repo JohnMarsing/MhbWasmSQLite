@@ -1,0 +1,32 @@
+﻿
+@foreach (var item in MhbWasmSQLite.Client.Features.FavoriteVerses.EnumsFV.Verses.List.Where(w => w.BookId == 1).OrderBy(o => o.Value).ToList())
+{
+	<div class="card mt-2">
+		<div class="card-header h3 px-2">@item.VerseName</div>
+
+		<div class="card-body">
+			<h6 class="card-title float-end fst-italic text-black-50">@item.VerseDescription</h6>
+		</div>
+
+		<div class="card-body">
+			<p class="card-text fs-5">
+				ToDo Add Actual Verses
+			</p>
+		</div>
+
+		<div class="card-body">
+			<h5 class="card-title">Comments</h5>
+			<p class="card-text fs-6">
+				@item.Commentary
+			</p>
+
+			@if (item.HasExtraInfo)
+			{
+				<button type="button" class="btn btn-outline-info"
+						@onclick="@(e => ButtonClick(item))">
+					Details
+				</button>
+			}
+		</div>
+	</div>
+}

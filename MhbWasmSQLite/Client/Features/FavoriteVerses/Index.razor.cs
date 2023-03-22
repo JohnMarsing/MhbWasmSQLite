@@ -7,39 +7,13 @@ namespace MhbWasmSQLite.Client.Features.FavoriteVerses;
 public partial class Index
 {
 	[Inject] public ILogger<Index>? Logger { get; set; }
-	//[Inject] public IScriptureService? svc { get; set; }
-
-	protected Status _status;
-	protected string _msg = string.Empty;
-
-	protected List<FavoriteVerse>? Favorites;
 
 	private Type? selectedType;
-	private void ButtonClick(string partialView)
+	private void ButtonClick(EnumsFV.Verses	verse)
 	{
-		selectedType = partialView?.ToString()?.Length > 0 ? Type.GetType($"MhbWasmSQLite.Client.Features.FavoriteVerses.DetailContent.{partialView}") : null;
-	}
-
-	protected override void OnInitialized()
-	{
-		base.OnInitialized();
-		Logger!.LogDebug(string.Format("Inside {0}"
-			, nameof(Index) + "!" + nameof(OnInitialized)));
-
-		Favorites = FavoriteVersesFactory.GetAll().ToList();
-		try
-		{
-			_status = Status.Loading;
-			foreach (var item in Favorites)
-			{
-			}
-			_status = Status.Loaded;
-		}
-		catch (Exception ex)
-		{
-			_status = Status.Error;
-			_msg = ex.ToString();
-		}
+		selectedType = verse.Name?.ToString()?.Length > 0 
+			? Type.GetType($"MhbWasmSQLite.Client.Features.FavoriteVerses.DetailContent.{verse.Name}") 
+			: null;
 	}
 }		
 
