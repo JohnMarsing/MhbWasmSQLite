@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace MhbWasmSQLite.Client.Features.FavoriteVerses;
 
@@ -13,5 +14,14 @@ public partial class DetailCard
 			? Type.GetType($"MhbWasmSQLite.Client.Features.FavoriteVerses.DetailContent.{verse.Name}")
 			: null;
 	}
+
 }
 
+/*
+	[Parameter] public MediaQuery? MediaQuery { get; set; }
+	[Parameter, EditorRequired] public bool IsXsOrSm { get; set; }
+
+	[Parameter]	public string Title { get; set; }
+	[Parameter] public RenderFragment ChildContent { get; set; }
+	[Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+*/

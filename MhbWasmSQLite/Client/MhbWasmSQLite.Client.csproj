@@ -6,9 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Remove="Features\FavoriteVerses\DetailCard.razor" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="7.0.0" />
@@ -26,19 +24,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\FavoriteVerses\Content\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Features\FavoriteVerses\DetailCard.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailCard.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Features\FavoriteVerses\DetailCard.razor" />
+    <None Include="Features\FavoriteVerses\DetailVerseCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
   </ItemGroup>
 
 </Project>

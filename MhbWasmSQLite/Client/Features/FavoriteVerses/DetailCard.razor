@@ -1,4 +1,10 @@
-﻿
+﻿@*@if (selectedType is not null)
+{
+	<div class="border border-primary my-3 p-2">
+		<DynamicComponent Type="@selectedType" />
+	</div>
+}*@
+
 @foreach (var item in MhbWasmSQLite.Client.Features.FavoriteVerses.EnumsFV.Verses.List.Where(w => w.BookId == 1).OrderBy(o => o.Value).ToList())
 {
 	<div class="card mt-2">
@@ -22,10 +28,18 @@
 
 			@if (item.HasExtraInfo)
 			{
+				@*<button type="button" class="btn btn-outline-info">Details</button>*@
 				<button type="button" class="btn btn-outline-info"
 						@onclick="@(e => ButtonClick(item))">
 					Details
 				</button>
+				
+				@if (selectedType is not null)
+				{
+					<div class="border border-primary my-3 p-2">
+						<DynamicComponent Type="@selectedType" />
+					</div>
+				}
 			}
 		</div>
 	</div>

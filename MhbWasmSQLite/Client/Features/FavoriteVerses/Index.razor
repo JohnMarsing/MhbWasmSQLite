@@ -1,30 +1,27 @@
 ﻿@page "/FavoriteVerses"
 <PageHeader Page="@MhbWasmSQLite.Client.Enums.LinkEnum.FavoriteVerses" />
 
-<div class="row">
-	<div class="col-9">
-		<DetailCard></DetailCard>
+
+<div class="@Enums.MediaQuery.XsOrSm.DivClass">
+	<div class="row">
+		<div class="col-9">
+			<DetailCard></DetailCard>
+		</div>
+		<div class="col-3">
+			<TableOfContentList />
+		</div>
 	</div>
-	<div class="col-3">
-		<ul class="bg-light fs-6">
-			@foreach (var item in EnumsFV.Verses.List.OrderBy(o => o.Value).ToList())
-			{
-				<li class="">
-					<small>@item.VerseNameAbrv</small>
-				</li>
-			}
-		</ul>
-	</div>
+
 </div>
 
-@if (selectedType is not null)
-{
-	<div class="border border-primary my-3 p-2">
-		<DynamicComponent Type="@selectedType" />
+<div class="@Enums.MediaQuery.MdOrLgOrXl.DivClass">
+	<div class="row">
+		<div class="col-10">
+			<DetailCard></DetailCard>
+		</div>
+		<div class="col-2">
+			<TableOfContentList />
+		</div>
 	</div>
-}
 
-<IntroductionContent />
-
-
-
+</div>
