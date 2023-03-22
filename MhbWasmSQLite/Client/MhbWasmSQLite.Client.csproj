@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <None Include="Features\FavoriteVerses\DetailCard.razor" />
-    <None Include="Features\FavoriteVerses\DetailVerseCard.razor" />
   </ItemGroup>
 
   <ItemGroup>
