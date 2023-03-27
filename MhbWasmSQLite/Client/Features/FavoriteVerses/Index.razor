@@ -1,27 +1,5 @@
 ﻿@page "/FavoriteVerses"
-<PageHeader Page="@MhbWasmSQLite.Client.Enums.LinkEnum.FavoriteVerses" />
+@using MhbWasmSQLite.Client.Features.FavoriteVerses.SearchToolbar
 
-
-<div class="@Enums.MediaQuery.XsOrSm.DivClass">
-	<div class="row">
-		<div class="col-9">
-			<DetailCard></DetailCard>
-		</div>
-		<div class="col-3">
-			<TableOfContentList />
-		</div>
-	</div>
-
-</div>
-
-<div class="@Enums.MediaQuery.MdOrLgOrXl.DivClass">
-	<div class="row">
-		<div class="col-10">
-			<DetailCard></DetailCard>
-		</div>
-		<div class="col-2">
-			<TableOfContentList />
-		</div>
-	</div>
-
-</div>
+<PageHeaderGlobal Page="@GlobalEnums.Link.FavoriteVerses" />
+<Typeahead />

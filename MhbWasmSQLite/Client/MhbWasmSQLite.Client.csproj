@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Features\FavoriteVerses\DetailCard.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UpToDateCheckInput Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
   </ItemGroup>
 
