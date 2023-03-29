@@ -3,7 +3,7 @@
 
 @*http://onemilliontracts-com.3dcartstores.com/Get-Out-Of-Hell-Free-Chance-Gospel-Tract--100ct-pckg-2-x-3-12_p_138.html*@
 @*
-<div class="pull-right">
+<div class="float-end">
 	<ol class="breadcrumb">
 		<li><a href="/">Home</a></li>
 		<li><a href="/Teaching">Teaching</a></li>

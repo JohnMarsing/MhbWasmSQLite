@@ -250,6 +250,33 @@ h2.powelfont {
 }
 
 
+.hebrewchart {
+  font-size: 22.0pt;
+  font-family: david;
+  direction: rtl;
+  line-height: 1.1;
+}
+
+  .hebrewchart.black {
+    font-size: 26.0pt;
+    font-family: david;
+    vertical-align: text-top;
+    color: #333333;
+  }
+
+  .hebrewchart.gray {
+    color: #b9b9b9;
+    font-family: david;
+    font-size: 26.0pt;
+  }
+
+  .hebrewchart.vp {
+    font-size: 28.0pt;
+    font-family: david;
+    color: #ff0000
+  }
+
+
 hr.warning {
   border-bottom: 8px solid #ece1c1;
 }

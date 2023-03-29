@@ -1,0 +1,89 @@
+﻿@using MhbWasmSQLite.Client.Enums
+
+
+@*<table class="table table-sm table-striped">*@
+
+<table id="mytable" class="table table-striped">
+	@*<table class="table table-striped table-condensed table-hover">*@
+	<tr>
+		<th class="text-center"><u>#</u></th>
+		@*<th class="text-center"> <abbr title="Gematria">gem</abbr></th>*@
+
+		<th class="text-center d-print-none"><a href="https://en.wikipedia.org/wiki/Gematria">gem</a></th>
+
+		@if (MediaQuery != MediaQuery.XsOrSm)
+		{
+			<th class="text-center"><small><a href="https://en.wikipedia.org/wiki/Unicode">unicode</a></small></th>
+@*			
+			<th class="text-center d-print-none"><small><a href="https://en.wikipedia.org/wiki/Unicode">unicode</a></small></th>
+			<th class="text-center d-print-block"><small>unicode</small></th>
+*@
+			<th class="text-center"><small><u>Strong's</u></small></th>
+		}
+		<th class="text-center"><u>eng</u></th>
+		<th><u>prefix</u></th>
+
+		@if (MediaQuery != MediaQuery.XsOrSm)
+		{
+			<th><u>literal / symbolic</u></th>
+		}
+
+
+		<th class="text-center"><u>nd</u></th>
+		<th class="text-center"><u>sofit</u></th>
+
+		<th class="text-center"><u>Letter</u></th>
+		<th><u>name</u></th>
+
+	</tr>
+
+	@foreach (var item in HebrewChartList!)
+	{
+		<tr>
+			@if (MediaQuery != MediaQuery.XsOrSm)
+			{
+				<td class="text-center">
+					@item.Value
+				</td>
+			}
+			else
+			{
+				<td class="text-center">
+					<button type="button" class="btn btn-default btn-sm" title="Literal/Symbolic Meaning"
+							data-toggle="popover"
+							data-placement="bottom" data-content="@item.LiteralMeaning / @item.SymbolicMeaning">
+						@item.Value <span class="fa fa-arrow-down"></span>
+					</button>
+				</td>
+			}
+
+			<td class="text-center">@item.Gematria</td>
+
+			@if (MediaQuery != MediaQuery.XsOrSm)
+			{
+				<td class="text-center">@item.UniInt</td>
+				<td class="text-center">@item.Strongs</td>
+			}
+
+			<td class="text-center">@item.EngLetter</td>
+			<td>@item.PrefixMeaning</td>
+
+			@if (MediaQuery != MediaQuery.XsOrSm)
+			{
+				<td>
+					@item.LiteralMeaning <br /> @item.SymbolicMeaning;
+				</td>
+			}
+
+			<td class="hebrewchart black text-center">@item.WithoutDagesh</td>
+			<td class="hebrewchart black text-center">@item.Sofit</td>
+			<td class="hebrewchart black text-center">@item.Hebrew</td>
+
+			<td>
+				<span class="text-primary">@item.UnicodeName</span>
+			</td>
+
+		</tr>
+	}
+	<tr><td colspan="11"><small><u>Column Names:</u><br /><b>eng</b>: English like letter; <b>unicode</b>: Unicode character set # (decimal); <b>Strong's</b>: starting Strong's #; <b>gem</b>: Gematria; <b>nd</b>: No Dagesh</small></td></tr>
+</table>
