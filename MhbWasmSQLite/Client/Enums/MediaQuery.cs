@@ -32,7 +32,8 @@ public abstract class MediaQuery : SmartEnum<MediaQuery>
 		internal const int SmMdOrLgOrXl = 8;
 		internal const int MdOrLgOrXl = 9;
 		internal const int LgOrXl = 10;
-		//internal const int XsOrXl = 11;
+		internal const int XsOrSmOrMd = 11;
+		//internal const int XsOrXl = 12;
 	}
 	#endregion
 
@@ -45,6 +46,7 @@ public abstract class MediaQuery : SmartEnum<MediaQuery>
 
 	// Combination
 	public static readonly MediaQuery XsOrSm = new XsOrSmSE();
+	public static readonly MediaQuery XsOrSmOrMd = new XsOrSmOrMdSE();
 	public static readonly MediaQuery SmMdOrLgOrXl = new SmMdOrLgOrXlSE();
 	public static readonly MediaQuery MdOrLgOrXl = new MdOrLgOrXlSE();
 	public static readonly MediaQuery LgOrXl = new LgOrXlSE();
@@ -111,6 +113,14 @@ public abstract class MediaQuery : SmartEnum<MediaQuery>
 		public XsOrSmSE() : base($"{nameof(Id.XsOrSm)}", Id.XsOrSm) { }
 		public override string DivClass => "d-md-none";
 	}
+
+	private sealed class XsOrSmOrMdSE : MediaQuery
+	{
+		public XsOrSmOrMdSE() : base($"{nameof(Id.XsOrSmOrMd)}", Id.XsOrSmOrMd) { }
+		public override string DivClass => "d-lg-none";
+	}
+
+	
 
 	private sealed class SmMdOrLgOrXlSE : MediaQuery
 	{

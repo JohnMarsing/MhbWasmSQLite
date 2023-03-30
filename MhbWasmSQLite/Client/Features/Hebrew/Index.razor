@@ -3,46 +3,42 @@
 
 <PageHeaderGlobal Page="@GlobalEnums.Link.Hebrew" />
 
-<p class="text-danger">WORK IN PROGRESS!</p>
-
-
-<div class="@MediaQuery.XsOrSm.DivClass">
+<div class="@MediaQuery.XsOrSmOrMd.DivClass">
 	<div class="row">
 		<div class="col-12">
 			<h3 class="text-success">
 				Hebrew Letters
 				<span class="hebrew small float-end">אָלֶף־בֵּית עִבְרִי</span>
 			</h3>
-			<AlephBetTable MediaQuery="@MediaQuery.XsOrSm" />
+			<AlephBetTableXsSmMd />
 		</div>
 	</div>
 
-@**@	
 	<div class="row">
 		<div class="col-12">
 			<h3 class="text-success">
 				Vowel Points<span class="hebrew small float-end">נִקּוּד</span>
 			</h3>
-			@*@await Html.PartialAsync(PartialViews.AlephBetVowelPoints, Model.VM)*@
+			<AlephBetVowelPoints />
 		</div>
 	</div>
 
 </div>
 
-<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+<div class="@MediaQuery.LgOrXl.DivClass">
 	<div class="row">
 		<div class="col-9">
 			<h3 class="text-success">
 				Hebrew Letters
 				<span class="hebrew small float-end">אָלֶף־בֵּית עִבְרִי</span>
 			</h3>
-			<AlephBetTable MediaQuery="@MediaQuery.MdOrLgOrXl" />
+			<AlephBetTableLgXl />
 		</div>
 		<div class="col-3">
 			<h3 class="text-success">
 				Vowel Points<span class="hebrew small float-end">נִקּוּד</span>
 			</h3>
-			@*@await Html.PartialAsync(PartialViews.AlephBetVowelPoints, Model.VM)*@
+			<AlephBetVowelPoints />
 		</div>
 	</div>
 </div>
