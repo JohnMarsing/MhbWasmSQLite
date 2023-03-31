@@ -6,13 +6,7 @@
 
 <PageTitle>@Page.Title</PageTitle>
 
-<div class="@MediaQuery.XsOrSm.DivClass">
-	<Menubar MenuItem="@Enums.MenuItems.QereKetiv" />
-</div>
-
-<div class="@MediaQuery.MdOrLgOrXl.DivClass">
-	<MenubarMdLgXl MenuItem="@Enums.MenuItems.QereKetiv" />
-</div>
+<SubNavBar ActiveMenuItem="@Enums.MenuItems.QereKetiv" />
 
 <div class="d-print-none pb-2 mt-4 mb-2 border-bottom">
 	<h1><i class="@Page.Icon"></i> @Page.Title</h1>

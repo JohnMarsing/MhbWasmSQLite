@@ -6,13 +6,7 @@
 
 <PageTitle>@Page.Title</PageTitle>
 
-<div class="@MediaQuery.XsOrSm.DivClass">
-	<Menubar MenuItem="@Enums.MenuItems.Definitions" />
-</div>
-
-<div class="@MediaQuery.MdOrLgOrXl.DivClass">
-	<MenubarMdLgXl MenuItem="@Enums.MenuItems.Definitions" />
-</div>
+<SubNavBar ActiveMenuItem="@Enums.MenuItems.Definitions" />
 
 <div class="d-print-none pb-2 mt-4 mb-2 border-bottom">
 	<h1><i class="@Page.Icon"></i> @Page.Title</h1>
@@ -231,16 +225,12 @@
 	</div>
 </div>
 
-@*ToDo: <partial name=@PartialViews.AlephBetFooter />
-		<div class="float-end">
-					<dl class="row">
-			<dt class="col-4 float-end"><span class="float-end"><i>Qere Ketiv</i></span></dt>
-*@
+@* ToDo: <partial name=@PartialViews.AlephBetFooter /> *@
 
 <div class="d-print-none">
 	<div class="row">
 		<div class="col-12">
-			<Button @onclick="ToggleButtonClick"
+			<Button @onclick="LearnMoreToggleButtonClick"
 							class="@Color btn-sm  float-end">
 				@Title <i class='@Icon'></i>
 			</Button>
@@ -278,16 +268,13 @@
 	</div>
 </div>
 
-
-
-
 @code {
 	public bool ContentIsShowing = false;
 	private string Color => ContentIsShowing ? "btn-primary" : "btn-primary";
-	private string Title => ContentIsShowing ? "Hide " : "Show More Notes";
+	private string Title => ContentIsShowing ? "Hide " : "Learn more...";
 	private string Icon => ContentIsShowing ? "fas fa-chevron-up" : "fas fa-chevron-down";
 
-	protected void ToggleButtonClick()
+	protected void LearnMoreToggleButtonClick()
 	{
 		ContentIsShowing = !ContentIsShowing;
 	}
