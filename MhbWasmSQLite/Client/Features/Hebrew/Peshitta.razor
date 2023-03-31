@@ -1,0 +1,24 @@
+﻿@page "/Hebrew/Peshitta"
+
+@using MhbWasmSQLite.Client.Enums;
+@using MhbWasmSQLite.Client.Features.Hebrew.Components;
+@using Page = MhbWasmSQLite.Client.Features.Hebrew.MenuItemConstants.Peshitta
+
+<PageTitle>@Page.Title</PageTitle>
+
+<div class="@MediaQuery.XsOrSm.DivClass">
+	<Menubar MenuItem="@Enums.MenuItems.Peshitta" />
+</div>
+
+<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+	<MenubarMdLgXl MenuItem="@Enums.MenuItems.Peshitta" />
+</div>
+
+<div class="d-print-none pb-2 mt-4 mb-2 border-bottom">
+	<h1><i class="@Page.Icon"></i> @Page.Title</h1>
+</div>
+
+
+@code {
+
+}

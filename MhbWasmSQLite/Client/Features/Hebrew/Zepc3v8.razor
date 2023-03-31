@@ -1,0 +1,114 @@
+﻿@page "/Hebrew/Zepc3v8"
+
+@using MhbWasmSQLite.Client.Enums;
+@using MhbWasmSQLite.Client.Features.Hebrew.Components;
+@using Page = MhbWasmSQLite.Client.Features.Hebrew.MenuItemConstants.Zepc3v8
+
+<PageTitle>@Page.Title</PageTitle>
+
+<div class="@MediaQuery.XsOrSm.DivClass">
+	<Menubar MenuItem="@Enums.MenuItems.Zepc3v8" />
+</div>
+
+<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+	<MenubarMdLgXl MenuItem="@Enums.MenuItems.Zepc3v8" />
+</div>
+
+<div class="d-print-none pb-2 mt-4 mb-2 border-bottom">
+	<h1><i class="@Page.Icon"></i> @Page.Title</h1>
+</div>
+
+
+<div class="row">
+	<div class="col-5">
+
+		<h5>
+			<b>Hebrew Letter Matching Exercise</b><br />
+			Notice the two columns to the right, the 1<sup>st</sup> column lists the Hebrew Aleph-Bet (with the <i>sofits</i> at the bottom) and the 2<sup>nd</sup> column is a list of all the Hebrew words found in <b>Zep 3:9</b>.
+			The exercise is to draw a line from the 1<sup>st</sup> column to the 2<sup>nd</sup> column matching up the Hebrew letters.
+			I have included this verse below (in English and Interlinear).<br /><br />
+			<b>Zep 3:9</b> is the only verse in the Hebrew bible where at least one occurrence of every Hebrew letter <b>and</b> at least one occurrence of every <i>sofit</i> can be found.
+			That fact by itself could be viewed as a mere coincidence, but consider the previous verse
+			<br /><br />
+			<b>Zep 3:8</b>  For then will I turn to the people a <b>pure language</b>, that they may all call upon the name of YHVH, to serve him with one consent.
+			<br /><br />For more information, see this article <a href="http://www.myhebrewbible.com/Article/222">#222</a>.
+		</h5>
+
+		<h5>
+			<b>Zep 3:9 KJV</b><br />
+			Therefore wait ye upon me, saith YHVH, until the day that I rise up to the prey: for my determination is to gather the nations, that I may assemble the kingdoms, to pour upon them mine indignation, even all my fierce anger: for all the earth shall be devoured with the fire of my jealousy.
+			<br /><br />
+		</h5>
+
+
+
+		<h5><b>Zep 3:9 Interlinear</b></h5>
+		<p class="hebrew small">
+			ToDo: Add  <code>foreach Model.Zepc3v8List</code>
+			@*			@foreach (var item in Model.Zepc3v8List)
+			{
+			<small><sup><span class="badge">@item.WordCount</span></sup></small>
+
+			@Html.Raw(item.PRS)
+			}*@
+		</p>
+
+	</div>
+
+	<div class="col-3">
+
+		<ol>
+			<li>ToDo: Add foreach <code>in Model.HebrewChartList</code></li>
+			@*			@foreach (var item in Model.HebrewChartList)
+			{
+			<li>
+			<span class="hebrew small">@Html.Raw(item.Hebrew)</span>
+			<sup class="text-muted">@item.UnicodeName</sup>
+			</li>
+			}
+			@foreach (var item in Model.SofitList)
+			{
+			<li>
+			<span class="hebrew small">@Html.Raw(item.Hebrew)</span>
+			<sup class="text-muted">@item.UnicodeName</sup>
+			</li>
+			}*@
+
+		</ol>
+
+	</div>
+
+	<div class="col-4">
+
+		<ul class="list-unstyled">
+			<li>ToDo: Add foreach <code>in Model.Zepc3v8List</code></li>
+			@*			@foreach (var item in Model.Zepc3v8List)
+			{
+			<li>
+			<span class="badge">@item.WordCount</span>
+			<span class="hebrew small">@Html.Raw(item.PRS)</span>
+			<sup class="text-muted">@item.Translation</sup>
+			</li>
+			}*@
+		</ul>
+	</div>
+
+</div>
+
+
+
+@code {
+	/*
+	public class Zepc3v8VM
+		{
+		public List<HebrewChart> HebrewChartList { get; set; }
+		public List<Sofit> SofitList { get; set; }
+		public List<HebrewChartZepc3v8> Zepc3v8List { get; set; }
+		public HeaderVM HeaderVM { get; set; }
+
+		public Zepc3v8VM()
+			{
+			HeaderVM = new HeaderVM(HebrewFilter.Zepc3v8);
+		}
+		*/
+}

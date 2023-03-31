@@ -1,5 +1,21 @@
 ﻿@page "/Hebrew"
 @using MhbWasmSQLite.Client.Enums;
+@using MhbWasmSQLite.Client.Features.Hebrew.Components;
+
+@*
+	<div class="top-row w-100">
+	<div class="w-100"><Menubar /></div>
+	Doesn't work because it needs to be out side MainLayout!Body
+*@
+
+<div class="@MediaQuery.XsOrSm.DivClass">
+	<Menubar MenuItem="@Enums.MenuItems.Chart" />
+</div>
+
+<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+	<MenubarMdLgXl MenuItem="@Enums.MenuItems.Chart" />
+</div>
+
 
 <PageHeaderGlobal Page="@GlobalEnums.Link.Hebrew" />
 

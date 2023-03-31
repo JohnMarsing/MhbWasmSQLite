@@ -1,0 +1,21 @@
+﻿@using MhbWasmSQLite.Client.Features.Hebrew.Enums
+
+<div class="row">
+	<div class="col-12">
+		<div class="d-print-none mt-n2">
+			<div class="float-end">
+				<ul class="list-inline bg-light ">
+					@foreach (var item in MenuItems.List.Where(w => w.Value <= MenuItems.Unicode.Value).OrderBy(o => o.Value))
+					{
+						<li class="list-inline-item bg-light">
+							<a class="btn btn-primary @ActiveFilter(item)" href="/@item.Page">
+								<i class="@item.Icon"></i>&nbsp; @item.Title
+							</a>
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+

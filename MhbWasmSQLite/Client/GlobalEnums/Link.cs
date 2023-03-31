@@ -7,9 +7,7 @@ public enum TeachingLinkEnum  // LinkEnumSubPage
 	Parent = 1,
 	CovenantAndContracts = 2,
 	TwoHouse = 2,
-
 }
-
 
 public abstract class Link : SmartEnum<Link>
 {
@@ -81,50 +79,32 @@ public abstract class Link : SmartEnum<Link>
 	#endregion
 
 	#region Private Instantiation
-	private sealed class ParashaSE : Link
+
+
+
+	private sealed class AboutSE : Link
 	{
-		public ParashaSE() : base($"{nameof(Id.Parasha)}", Id.Parasha) { }
-		public override string Index => "Parasha";
-		public override string Title => "Parasha";
-		public override string Icon => "far fa-bookmark";
+		public AboutSE() : base($"{nameof(Id.About)}", Id.About) { }
+		public override string Index => "About";
+		public override string Title => "About";
+		public override string Icon => "fas fa-info";  //fas fa-question
 		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Parashat H6567";
-		public override string HomeFloatRightHebrew => "פָּרָשַׁת";
+		public override string HomeTitleSuffix => " Odot H182";
+		public override string HomeFloatRightHebrew => "אוֹדוֹת";
 	}
 
-	/*
-	private sealed class BookChapterSE : LinkEnum
+	private sealed class AlephTavsSE : Link
 	{
-		public BookChapterSE() : base($"{nameof(Id.BookChapter)}", Id.BookChapter) { }
-		public override string Index => "BookChapter";
-		public override string Title => "Book Chapter";
-		public override string Icon => "far fa-bookmark";
-		public override string ShortTitle => ""; 
-		public override string HomeTitleSuffix => " Torah H8451";
-		public override string HomeFloatRightHebrew => "תּוֹרָה";
-	}
-	private sealed class VerseListSE : LinkEnum
-	{
-		public VerseListSE() : base($"{nameof(Id.VerseList)}", Id.VerseList) { }
-		public override string Index => "VerseList";
-		public override string Title => "Verse List";
-		public override string Icon => "fas fa-list";
+		public AlephTavsSE() : base($"{nameof(Id.AlephTavs)}", Id.AlephTavs) { }
+		//public override string Index => "AlephTav/Introduction";
+		public override string Index => "AlephTav/";
+		public override string Title => "Aleph Tav's";
+		public override string Icon => "fa-letter-aleph-tav";
 		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " mispar h4557";
-		public override string HomeFloatRightHebrew => "מִסְפָּר";
+		public override string HomeTitleSuffix => " Aleph Tav H853";
+		public override string HomeFloatRightHebrew => "אֵת";
 	}
-
-	private sealed class VersesCsvSE : LinkEnum
-	{
-		public VersesCsvSE() : base($"{nameof(Id.VersesCsv)}", Id.VersesCsv) { }
-		public override string Index => "VersesCsv";
-		public override string Title => "Multi Verses Lookup";
-		public override string Icon => "fas fa-torah";
-		public override string ShortTitle => "Multi Verses Lookup by C.S.V. (comma separated values)";
-		public override string HomeTitleSuffix => " mispar h4557";
-		public override string HomeFloatRightHebrew => "מִסְפָּר";
-	}
-	*/
+	//<i class="fa text-danger fa-letter-aleph-tav fa-fw fa-3x" aria-hidden="true"></i>
 
 	private sealed class ArticleSE : Link
 	{
@@ -135,6 +115,28 @@ public abstract class Link : SmartEnum<Link>
 		public override string ShortTitle => "";
 		public override string HomeTitleSuffix => " Ketuvim H3789";
 		public override string HomeFloatRightHebrew => "כְּתֻבִים";
+	}
+
+	private sealed class BibleListSE : Link
+	{
+		public BibleListSE() : base($"{nameof(Id.BibleList)}", Id.BibleList) { }
+		public override string Index => "BibleList";
+		public override string Title => "Bible List";
+		public override string Icon => "fas fa-torah";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " Mispar H4557 ";
+		public override string HomeFloatRightHebrew => "מִסְפָּר";
+	}
+
+	private sealed class BibleSearchSE : Link
+	{
+		public BibleSearchSE() : base($"{nameof(Id.BibleSearch)}", Id.BibleSearch) { }
+		public override string Index => "BibleSearch";
+		public override string Title => "Bible Search";
+		public override string Icon => "fas fa-search";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " Bawkar H1239";
+		public override string HomeFloatRightHebrew => "בָּקַר";
 	}
 
 	private sealed class FavoriteVersesSE : Link
@@ -160,63 +162,6 @@ public abstract class Link : SmartEnum<Link>
 		//<span class="hebrew">אָלֶף־בֵּית עִבְרִי</span>
 	}
 
-	private sealed class AlephTavsSE : Link
-	{
-		public AlephTavsSE() : base($"{nameof(Id.AlephTavs)}", Id.AlephTavs) { }
-		//public override string Index => "AlephTav/Introduction";
-		public override string Index => "AlephTav/";
-		public override string Title => "Aleph Tav's";
-		public override string Icon => "fa-letter-aleph-tav";
-		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Aleph Tav H853";
-		public override string HomeFloatRightHebrew => "אֵת";
-	}
-	//<i class="fa text-danger fa-letter-aleph-tav fa-fw fa-3x" aria-hidden="true"></i>
-
-	private sealed class BibleListSE : Link
-	{
-		public BibleListSE() : base($"{nameof(Id.BibleList)}", Id.BibleList) { }
-		public override string Index => "BibleList";
-		public override string Title => "Bible List";
-		public override string Icon => "fas fa-torah";
-		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Mispar H4557 ";
-		public override string HomeFloatRightHebrew => "מִסְפָּר";
-	}
-
-	private sealed class TeachingSE : Link
-	{
-		public TeachingSE() : base($"{nameof(Id.Teaching)}", Id.Teaching) { }
-		public override string Index => "Teaching";
-		public override string Title => "Teaching";
-		public override string Icon => "fas fa-graduation-cap";
-		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Tamid H8548"; // Yara H3384; h2094 Zahar
-		public override string HomeFloatRightHebrew => "לְלַמֵד";
-	}
-
-	private sealed class SitemapSE : Link
-	{
-		public SitemapSE() : base($"{nameof(Id.Sitemap)}", Id.Sitemap) { }
-		public override string Index => "Sitemap";
-		public override string Title => "Sitemap";
-		public override string Icon => "fas fa-sitemap";
-		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " nahal H5095";
-		public override string HomeFloatRightHebrew => "נָהַל";
-	}
-
-	private sealed class BibleSearchSE : Link
-	{
-		public BibleSearchSE() : base($"{nameof(Id.BibleSearch)}", Id.BibleSearch) { }
-		public override string Index => "BibleSearch";
-		public override string Title => "Bible Search";
-		public override string Icon => "fas fa-search";
-		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Bawkar H1239";
-		public override string HomeFloatRightHebrew => "בָּקַר";
-	}
-
 	private sealed class HomeSE : Link
 	{
 		public HomeSE() : base($"{nameof(Id.Home)}", Id.Home) { }
@@ -240,21 +185,78 @@ public abstract class Link : SmartEnum<Link>
 		public override string HomeFloatRightHebrew => "";
 	}
 
-	private sealed class AboutSE : Link
+	private sealed class ParashaSE : Link
 	{
-		public AboutSE() : base($"{nameof(Id.About)}", Id.About) { }
-		public override string Index => "About";
-		public override string Title => "About";
-		public override string Icon => "fas fa-info";  //fas fa-question
+		public ParashaSE() : base($"{nameof(Id.Parasha)}", Id.Parasha) { }
+		public override string Index => "Parasha";
+		public override string Title => "Parasha";
+		public override string Icon => "far fa-bookmark";
 		public override string ShortTitle => "";
-		public override string HomeTitleSuffix => " Odot H182";
-		public override string HomeFloatRightHebrew => "אוֹדוֹת";
+		public override string HomeTitleSuffix => " Parashat H6567";
+		public override string HomeFloatRightHebrew => "פָּרָשַׁת";
 	}
 
-	//
+	private sealed class SitemapSE : Link
+	{
+		public SitemapSE() : base($"{nameof(Id.Sitemap)}", Id.Sitemap) { }
+		public override string Index => "Sitemap";
+		public override string Title => "Sitemap";
+		public override string Icon => "fas fa-sitemap";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " nahal H5095";
+		public override string HomeFloatRightHebrew => "נָהַל";
+	}
+
+	private sealed class TeachingSE : Link
+	{
+		public TeachingSE() : base($"{nameof(Id.Teaching)}", Id.Teaching) { }
+		public override string Index => "Teaching";
+		public override string Title => "Teaching";
+		public override string Icon => "fas fa-graduation-cap";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " Tamid H8548"; // Yara H3384; h2094 Zahar
+		public override string HomeFloatRightHebrew => "לְלַמֵד";
+	}
+
 
 	#endregion
 }
+
+
+
+/*
+private sealed class BookChapterSE : LinkEnum
+{
+	public BookChapterSE() : base($"{nameof(Id.BookChapter)}", Id.BookChapter) { }
+	public override string Index => "BookChapter";
+	public override string Title => "Book Chapter";
+	public override string Icon => "far fa-bookmark";
+	public override string ShortTitle => ""; 
+	public override string HomeTitleSuffix => " Torah H8451";
+	public override string HomeFloatRightHebrew => "תּוֹרָה";
+}
+private sealed class VerseListSE : LinkEnum
+{
+	public VerseListSE() : base($"{nameof(Id.VerseList)}", Id.VerseList) { }
+	public override string Index => "VerseList";
+	public override string Title => "Verse List";
+	public override string Icon => "fas fa-list";
+	public override string ShortTitle => "";
+	public override string HomeTitleSuffix => " mispar h4557";
+	public override string HomeFloatRightHebrew => "מִסְפָּר";
+}
+
+private sealed class VersesCsvSE : LinkEnum
+{
+	public VersesCsvSE() : base($"{nameof(Id.VersesCsv)}", Id.VersesCsv) { }
+	public override string Index => "VersesCsv";
+	public override string Title => "Multi Verses Lookup";
+	public override string Icon => "fas fa-torah";
+	public override string ShortTitle => "Multi Verses Lookup by C.S.V. (comma separated values)";
+	public override string HomeTitleSuffix => " mispar h4557";
+	public override string HomeFloatRightHebrew => "מִסְפָּר";
+}
+*/
 
 /*
 public static class BibleSearch

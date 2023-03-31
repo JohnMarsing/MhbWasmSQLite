@@ -2,15 +2,7 @@
 
 namespace MhbWasmSQLite.Client.Enums;
 
-public enum TeachingLinkEnum  // LinkEnumSubPage
-{
-	Parent = 1,
-	CovenantAndContracts = 2,
-	TwoHouse = 2,
-
-}
-
-
+//ToDo: I think I want this removed and to use only MhbWasmSQLite.Client.GlobalEnums.Link;
 public abstract class LinkEnum : SmartEnum<LinkEnum>
 {
 	#region Id's
