@@ -1,0 +1,18 @@
+﻿<div class="d-print-none">
+	<div class="row">
+		<div class="col-12">
+			<Button @onclick="LearnMoreToggleButtonClick"
+							class="@Color btn-sm  float-end">
+				@Title <i class='@Icon'></i>
+			</Button>
+
+			@if (ContentIsShowing)
+			{
+				<div class="card-body bg-light">
+					@ChildContent
+				</div>
+			}
+
+		</div>
+	</div>
+</div>
