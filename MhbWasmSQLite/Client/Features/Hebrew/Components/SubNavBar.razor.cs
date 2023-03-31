@@ -1,5 +1,4 @@
-﻿using MhbWasmSQLite.Client.Features.Hebrew.Enums;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace MhbWasmSQLite.Client.Features.Hebrew.Components;
 

@@ -1,11 +1,11 @@
-﻿@using PageLink = MhbWasmSQLite.Client.Features.Hebrew.Enums.MenuItems
+﻿@*@using PageLink = MenuItems*@
 
 <nav id="subNavBar" class="navbar navbar-expand-sm navbar-toggleable-md border-bottom box-shadow p-0 mb-3 @NavBarColor">
 	<div class="container">
 
-		<a class="nav-link @GetActive(PageLink.Chart)" title="" href="@PageLink.Chart.Page">
+		<a class="nav-link @GetActive(MenuItems.Chart)" title="" href="@MenuItems.Chart.Page">
 			<i class="fas fa-home"></i>
-			@PageLink.Chart.Title
+			@MenuItems.Chart.Title
 		</a>
 
 		<button class="navbar-toggler" @onclick="ToggleSubNavBar" type="button"
@@ -19,8 +19,8 @@
 				 @onclick="ToggleSubNavBar">
 
 			<ul class="navbar-nav flex-grow-1">
-				@foreach (var item in PageLink.List
-				.Where(w => w.Value != ActiveMenuItem & w.Value <= PageLink.Unicode.Value)
+				@foreach (var item in MenuItems.List
+				.Where(w => w.Value != MenuItems.Chart.Value)
 				.OrderBy(o => o.Value))
 				{
 					<li class="nav-item">
