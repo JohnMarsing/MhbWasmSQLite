@@ -1,8 +1,8 @@
 ﻿
-@foreach (var item in Enums.LinkEnum
+@foreach (var item in GlobalEnums.Link
 	.List
 	.OrderBy(o => o.Value)
-	.Where(w => w.Value != Enums.LinkEnum.Home.Value))
+	.Where(w => w.Value != GlobalEnums.Link.Home.Value))
 {
 	<a href="@item.Index" title="@item.Title @item.HomeTitleSuffix"
 	 class="list-group-item list-group-item-warning ">
@@ -17,4 +17,4 @@
 }
 
 
-@*.Where(w => w.Value != Sitemap.Enums.LinkEnum.Home*@
+@*.Where(w => w.Value != Sitemap.GlobalEnums.Link.Home*@

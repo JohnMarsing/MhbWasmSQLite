@@ -1,4 +1,4 @@
-﻿using MhbWasmSQLite.Client.Enums;
+﻿using MhbWasmSQLite.Client.GlobalEnums;
 using Microsoft.AspNetCore.Components;
 
 namespace MhbWasmSQLite.Client.Components;
@@ -10,7 +10,7 @@ public partial class BreadCrumbs
 	[Parameter] public string? Title { get; set; }
 	//[Parameter] public string? Icon { get; set; }
 	[Parameter] public MarkupString IconMarkup { get; set; }
-	[Parameter, EditorRequired] public LinkEnum? ParentPage { get; set; }
+	[Parameter, EditorRequired] public Link? ParentPage { get; set; }
 
 	protected bool IsValid;
 

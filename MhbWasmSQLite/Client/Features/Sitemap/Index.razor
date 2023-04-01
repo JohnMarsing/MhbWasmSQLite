@@ -1,14 +1,14 @@
 ﻿@page "/Sitemap"
-<PageHeader Page="@Enums.LinkEnum.Sitemap" />
+<PageHeader Page="@GlobalEnums.Link.Sitemap" />
 
 
 <div class="h4 mb-3">
 	<ul class="fa-ul">
 
-		@foreach (var item in Enums.LinkEnum
+		@foreach (var item in GlobalEnums.Link
 		.List
 		.OrderBy(o => o.Value)
-		.Where(w => w.Value != Enums.LinkEnum.Sitemap.Value)
+		.Where(w => w.Value != GlobalEnums.Link.Sitemap.Value)
 		)
 		{
 			<li>
