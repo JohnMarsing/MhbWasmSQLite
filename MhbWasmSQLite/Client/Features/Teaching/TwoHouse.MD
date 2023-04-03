@@ -346,7 +346,7 @@
 		Many of these articles can be found here...
 		<a href="@Anchors.Article.PagedListFromRoot" asp-route-pagenumber="1" asp-route-searchText="" asp-route-filterId="@MyHebrewBible.Global.Enums.ArticleQuery.Filter.Favorites"
 			 class="btn btn-sm btn-default">
-			<i class="text-danger fa fa-star" aria-hidden="true"></i>&nbsp; <span class="text-danger">Favorites Articles</span> <i class="fa fa-external-link-square"></i>
+			<i class="text-danger fa fa-star" aria-hidden="true"></i>&nbsp; <span class="text-danger">Favorites Articles</span> <i class="fas fa-external-link-alt-square"></i>
 		</a>
 	</li>
 	<li>
@@ -546,7 +546,7 @@
 	Christianity talks obsesseively about salvation so let me ask some questions<br />
 	saved...
 	<sup>
-		@*<a href="https://www.myhebrewbible.com/Article/???" title="Salvation-Theology-of-Antinomian-Christianity-A-Critique, article #2"> <i class="fa fa-external-link-square"></i></a>*@
+		@*<a href="https://www.myhebrewbible.com/Article/???" title="Salvation-Theology-of-Antinomian-Christianity-A-Critique, article #2"> <i class="fas fa-external-link-alt-square"></i></a>*@
 	</sup>
 	<ul>
 		<li>From <b>what</b>?</li>

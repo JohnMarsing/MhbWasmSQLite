@@ -1,0 +1,113 @@
+﻿@page "/Testbed"
+
+@using MhbWasmSQLite.Client.Components.Tests
+@using MhbWasmSQLite.Client.Enums
+
+<h1>Testbed</h1>
+
+<ShowMediaQuery />
+
+<h3>Show Xs or Sm only</h3>
+<div class="d-md-none">
+	<p class="ms-4">Hello</p>
+</div>
+
+<h3>Show Md, Lg or Xl only</h3>
+<div class="d-none d-md-block">
+	<p class="ms-4">Hello</p>
+</div>
+
+<hr />
+
+<h3>Show Xs or Sm only</h3>
+<div class="@MediaQuery.XsOrSm.DivClass">
+	<p class="ms-4">Hello</p>
+</div>
+
+<h3>Show Md, Lg or Xl only</h3>
+<div class="@MediaQuery.MdOrLgOrXl.DivClass">
+	<p class="ms-4">Hello</p>
+
+	<dl class="row">
+		<dt class="col-8 float-end"><small>MediaQuery.MdOrLgOrXl.DivClass</small></dt>
+		<dd class="col-4">@MediaQuery.MdOrLgOrXl.DivClass</dd>
+	</dl>
+
+</div>
+
+@*<div class="@MediaQuery.MdOrLgOrXl.DivClass"></div>*@
+
+
+
+
+<hr />
+<h3 class="mt-5">d-inline-block, d-[sm|md|lg|xm]-inline-block</h3>
+<a href="https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=display-inline-block-classes">doc</a>
+<br />
+<div class="d-inline-block bg-primary">d-inline-block</div>
+<div class="d-sm-inline-block bg-success">d-sm-inline-block</div>
+<div class="d-md-inline-block bg-danger">d-md-inline-block</div>
+<div class="d-lg-inline-block bg-warning">d-lg-inline-block</div>
+<div class="d-xl-inline-block bg-info">d-xl-inline-block</div>
+
+@*
+<hr />
+
+<h3 class="mt-4"><code>XsOrSm</code> and <code>MdOrLgOrXl</code></h3>
+<div class="@MediaQuery.XsOrSm.DivClass">
+	<p class="text-success">1a. XsOrSm</p>
+</div>
+<div class="@MediaQuery.MdOrLgOrXl">
+	<p class="text-danger">1b. MdOrLgOrXl</p>
+</div>
+
+
+<h3 class="mt-4"><code>XsOrSmOrMd</code> and <code>LgOrXl</code></h3>
+<div class="@MediaQuery.XsOrSmOrMd.DivClass">
+	<p class="text-warning">2a. XsOrSmOrMd</p>
+</div>
+<div class="@MediaQuery.LgOrXl">
+	<p class="text-info">2b. LgOrXl</p>
+</div>
+
+<hr />
+
+<h3 class="mt-4"><code>d-none</code></h3>
+<div class="d-none p-2 bd-highlight">d-none</div>
+<div class="d-sm-none p-2 bd-highlight">d-sm-none</div>
+<div class="d-md-none p-2 bd-highlight">d-md-none</div>
+<div class="d-lg-none p-2 bd-highlight">d-lg-none</div>
+<div class="d-xl-none p-2 bd-highlight">d-xl-none</div>
+<div class="d-xxl-none p-2 bd-highlight">d-xxl-none</div>
+
+<h3 class="mt-4"><code>d-block</code></h3>
+<span class="d-block p-2 bd-highlight">d-block</span>
+<span class="d-sm-block p-2 bd-highlight">d-sm-block</span>
+<span class="d-md-block p-2 bd-highlight">d-md-block</span>
+<span class="d-lg-block p-2 bd-highlight">d-lg-block</span>
+<span class="d-xl-block p-2 bd-highlight">d-xl-block</span>
+<span class="d-xxl-block p-2 bd-highlight">d-xxl-block</span>
+
+<h3 class="mt-4"><code>d-flex</code></h3>
+<p>
+	<a href="https://www.w3schools.com/bootstrap5/bootstrap_flex.php">Docs</a>
+	<br />Bootstrap 5 now uses flexbox, instead of floats, to handle the layout.
+	<br />Horizontal Direction, Vertical Direction, Justify Content
+</p>
+
+<span class="d-flex p-2 bd-highlight">d-flex</span>
+<span class="d-sm-flex p-2 bd-highlight">d-sm-flex</span>
+<span class="d-md-flex p-2 bd-highlight">d-md-flex</span>
+<span class="d-lg-flex p-2 bd-highlight">d-lg-flex</span>
+<span class="d-xl-flex p-2 bd-highlight">d-xl-flex</span>
+<span class="d-xxl-flex p-2 bd-highlight">d-xxl-flex</span>
+
+<h3 class="mt-4">
+	<a href="https://bootstrap-cheatsheet.themeselection.com/">Bootstrap 5 CheatSheet</a></h3>
+<p>You can use .mark class to <span class="mark">highlight</span> text.</p>
+<p><abbr title="attribute" class="initialism">attr</abbr></p>
+
+
+<h3 class="mt-4">Get Bootstrap 5</h3>
+	<a href="https://getbootstrap.com/docs/5.0/migration/#utilities">Migrating to v5</a>
+*@
