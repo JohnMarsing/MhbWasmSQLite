@@ -5,7 +5,7 @@ namespace MhbWasmSQLite.Client.Features.HomeMhbVer6;
 
 public partial class IndexContent
 {
-	[Parameter] public MediaQuery MediaQuery { get; set; } = MediaQuery.SmMdOrLgOrXl;
+	[Parameter] public MediaQuery MediaQuery { get; set; } = MediaQuery.SmOrMdOrLgOrXl;
 
 	protected string? panelClass;
 	protected string? initialyMakePanelOpen;  
