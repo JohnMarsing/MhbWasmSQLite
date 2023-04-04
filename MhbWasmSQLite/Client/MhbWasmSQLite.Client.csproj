@@ -6,6 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Features\Lists\TimeLine.razor" />
+  </ItemGroup>
+
 
 
   <ItemGroup>
@@ -29,6 +33,15 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
+    <_ContentIncludedByDefault Remove="Features\Lists\TimeLine.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Features\Lists\TimeLine.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Features\Lists\TimeLine.razor" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,48 @@
+﻿@page "/BibleList/Emendations"
+
+@using MhbWasmSQLite.Client.Enums;
+@using MhbWasmSQLite.Client.Features.Lists.Components;
+
+@using Page = MhbWasmSQLite.Client.Features.Lists.MenuItemConstants.Emendations
+<PageTitle>@Page.Title</PageTitle>
+
+<SubNavBar ActiveMenuItem="@MenuItems.Emendations" />
+
+@*
+	<PageHeader Page="@GlobalEnums.Link.BibleList" />
+	This is only on the Index.razor
+*@
+
+<p>Emendations</p>
+
+@code {
+	/*
+		private readonly IListRepository db;
+		private readonly ILogger _logger;
+
+		public IList<Emendation> Emendations { get; set; }
+		public IList<EmendationBook> EmendationBooks { get; set; }
+
+		public EmendationsModel(IListRepository repository,	ILogger<EmendationsModel> logger)
+			{
+			db = repository;
+			_logger = logger;
+		}
+
+		public async Task<IActionResult> OnGetAsync()
+			{
+			try
+				{
+				Emendations = await db.GetAllEmendationsAsync();
+				EmendationBooks = await db.GetEmendationBooksAsync();
+			}
+			catch (Exception ex)
+				{
+				_logger.LogError(ex, $"Inside {nameof(EmendationsModel)}, {nameof(OnGetAsync)}");
+				return Redirect(Anchors.Error.RedirectPageName);
+
+			}
+			return Page();
+		}
+	*/
+}
