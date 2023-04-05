@@ -2,10 +2,11 @@
 @page "/List"
 @using MhbWasmSQLite.Client.Features.Lists.Components
 
+<SubNavBar ActiveMenuItem="@MenuItems.Home" />
 
 <PageHeader Page="@GlobalEnums.Link.BibleList" />
 
-<SubNavBar ActiveMenuItem="@MenuItems.Home" />
+
 
 
 @*@inject IOptions<AppSettings> AppSettings*@

@@ -2,26 +2,16 @@
 @using MhbWasmSQLite.Client.Enums;
 @using MhbWasmSQLite.Client.Features.Lists.Components
 
-@using Page = MhbWasmSQLite.Client.Features.Lists.MenuItemConstants.Emendations
+@using Page = MhbWasmSQLite.Client.Features.Lists.MenuItemConstants.MapCanaanOT
 <PageTitle>@Page.Title</PageTitle>
 
 <SubNavBar ActiveMenuItem="@MenuItems.MapCanaanOT" />
 
-<div class="row">
-	<div class="col-12">
-		<p class="text-muted float-end">
-				<sup>
-				<a href="https://beta.lds.org/scriptures/bible-maps/map-10?lang=eng" target="_blank">
-						Source <i class="fas fa-external-link-alt" aria-hidden="true">&nbsp;</i>
-					</a>
-				</sup>
-		</p>
-	</div>
-</div>
+<SourceAnchor Url="https://beta.lds.org/scriptures/bible-maps/map-10?lang=eng" />
 
-<div class="card bg-light">
+<BlurbCard>
 	Here is a nice map highlighting key places mentioned in the <i>Tanach</i>
-</div>
+</BlurbCard>
 
 <img src="@BlobContent.ImagesUrl("MapCanaanOTSmall.png")" alt="Map Canaan OT" class="img-responsive img-rounded" />
 
@@ -92,6 +82,7 @@
 		<p data-aid="19051626" id="p21"><strong>Sodom and Gomorrah</strong> Lot chose to live in Sodom (<a href="https://beta.lds.org/scriptures/ot/gen/13.11-12?lang=eng#p10" class="scripture-ref">Gen. 13:11–12</a>; <a href="https://beta.lds.org/scriptures/ot/gen/14.12?lang=eng#p11" class="scripture-ref">14:12</a>). God destroyed Sodom and Gomorrah because of wickedness (<a href="https://beta.lds.org/scriptures/ot/gen/19.24-26?lang=eng#p23" class="scripture-ref">Gen. 19:24–26</a>). Jesus later used these cities as symbols of wickedness (<a href="https://beta.lds.org/scriptures/nt/matt/10.15?lang=eng#p14" class="scripture-ref">Matt. 10:15</a>).</p>
 	</li>
 </ol>
+
 @code {
 
 }

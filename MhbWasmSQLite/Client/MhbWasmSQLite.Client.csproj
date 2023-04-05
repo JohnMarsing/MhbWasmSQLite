@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Features\Lists\TimeLine.razor" />
+    <None Remove="Features\Lists\PeopleKilledContent.razor~RF51a032c.TMP" />
   </ItemGroup>
 
 
@@ -33,15 +33,6 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
-    <_ContentIncludedByDefault Remove="Features\Lists\TimeLine.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Features\Lists\TimeLine.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Features\Lists\TimeLine.razor" />
   </ItemGroup>
 
 </Project>

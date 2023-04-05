@@ -1,0 +1,41 @@
+﻿
+<h5>Torah Book Filter <span class="fas fa-filter"></span></h5>
+
+<div class="row mb-2">
+	<div class="col-12">
+		<a ref="/BibleList/Mitzvot/Genesis"
+			 class="btn btn-primary btn-sm">
+			Genesis
+		</a>
+		<a ref="/BibleList/Mitzvot/Exodus"
+			 class="btn btn-primary btn-sm">
+			Exodus
+		</a>
+		<a ref="/BibleList/Mitzvot/Leviticus"
+			 class="btn btn-primary btn-sm">
+			Leviticus
+		</a>
+		<a ref="/BibleList/Mitzvot/Numbers"
+			 class="btn btn-primary btn-sm">
+			Numbers
+		</a>
+		<a ref="/BibleList/Mitzvot/Deuteronomy"
+			 class="btn btn-primary btn-sm">
+			Deuteronomy
+		</a>
+
+	</div>
+</div>
+
+@*@await Html.PartialAsync(PartialViews.MitzvotTable, Model.Mitzvot)*@
+
+@code {
+/*
+	<PageHeader Page="@GlobalEnums.Link.BibleSearch" />
+		asp-route-bookId="@TorahBook.Genesis"
+		asp-route-bookId="@TorahBook.Exodus"
+		asp-route-bookId="@TorahBook.Leviticus"
+		asp-route-bookId="@TorahBook.Numbers"
+		asp-route-bookId="@TorahBook.Deuteronomy"
+	*/
+}

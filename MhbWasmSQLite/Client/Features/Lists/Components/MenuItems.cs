@@ -1,5 +1,4 @@
 ﻿using Ardalis.SmartEnum;
-
 using PageLink = MhbWasmSQLite.Client.GlobalEnums.Link;
 
 namespace MhbWasmSQLite.Client.Features.Lists.Components;
@@ -28,7 +27,9 @@ public abstract class MenuItems : SmartEnum<MenuItems>
 	public static readonly MenuItems Feasts = new FeastsSE();
 	public static readonly MenuItems JotAndTittle = new JotAndTittleSE();
 	public static readonly MenuItems MapCanaanOT = new MapCanaanOTSE();
+	public static readonly MenuItems Mitzvot = new MitzvotSE();
 	public static readonly MenuItems ParablesOfYeshua = new ParablesOfYeshuaSE();
+	public static readonly MenuItems PeopleKilled = new PeopleKilledSE();
 	public static readonly MenuItems TimeLine = new TimeLineSE();
 	public static readonly MenuItems YosephAndYeshuaComparison = new YosephAndYeshuaComparisonSE();
 	// SE=SmartEnum
@@ -84,12 +85,28 @@ public abstract class MenuItems : SmartEnum<MenuItems>
 		public override string Page => PageLink.BibleList.Index + "/" + nameof(Id.MapCanaanOT); 
 	}
 
+	private sealed class MitzvotSE : MenuItems
+	{
+		public MitzvotSE() : base($"{nameof(Id.Mitzvot)}", Id.Mitzvot) { }
+		public override string Icon => "fas fa-map";
+		public override string Title => "Mitzvot";
+		public override string Page => PageLink.BibleList.Index + "/" + nameof(Id.Mitzvot);
+	}
+
 	private sealed class ParablesOfYeshuaSE : MenuItems
 	{
 		public ParablesOfYeshuaSE() : base($"{nameof(Id.ParablesOfYeshua)}", Id.ParablesOfYeshua) { }
 		public override string Icon => "fa fa-blind";
 		public override string Title => "Parables of Yeshua";
 		public override string Page => PageLink.BibleList.Index + "/" + nameof(Id.ParablesOfYeshua);
+	}
+
+	private sealed class PeopleKilledSE : MenuItems
+	{
+		public PeopleKilledSE() : base($"{nameof(Id.PeopleKilled)}", Id.PeopleKilled) { }
+		public override string Icon => "fas fa-battery-empty"; 
+		public override string Title => "People Killed";
+		public override string Page => PageLink.BibleList.Index + "/" + nameof(Id.PeopleKilled);
 	}
 
 	private sealed class TimeLineSE : MenuItems

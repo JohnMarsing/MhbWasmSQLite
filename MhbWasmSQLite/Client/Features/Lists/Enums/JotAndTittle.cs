@@ -11,7 +11,7 @@ public class JotAndTittle
 	{
 		get
 		{
-			return Verse.Replace(" ", "-").Replace(":", "-").Replace(";", "-"); //
+			return Verse!.Replace(" ", "-").Replace(":", "-").Replace(";", "-"); //
 		}
 	}
 }

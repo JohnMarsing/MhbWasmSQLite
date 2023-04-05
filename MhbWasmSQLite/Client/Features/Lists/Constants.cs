@@ -1,6 +1,5 @@
 ﻿namespace MhbWasmSQLite.Client.Features.Lists;
 
-//namespace MyHebrewBible.Web.Pages.List static class Pages
 public static class MenuItemConstants
 {
 	public static class Emendations
@@ -9,6 +8,8 @@ public static class MenuItemConstants
 		public const string Title = "Emendations";
 		public const string Icon = "fab fa-wordpress";
 	}
+
+	public const string Feasts = "/BibleList/Feasts";
 
 	public static class GospelHarmony
 	{
@@ -31,12 +32,42 @@ public static class MenuItemConstants
 		public const string Icon = "fab fa-wordpress";
 	}
 
-	public const string TimeLine = "/BibleList/TimeLine";
-	public const string ParablesOfYeshua = "/BibleList/ParablesOfYeshua";
-	public const string YosephAndYeshuaComparison = "/BibleList/YosephAndYeshuaComparison";
-	public const string Feasts = "/BibleList/Feasts";
-	public const string PeopleKilled = "/BibleList/PeopleKilled";
-	public const string Mitzvot = "/BibleList/Mitzvot";
+	public static class Mitzvot
+	{
+		public const string Index = "/Mitzvot";
+		public const string Title = "Mitzvot";
+		public const string Icon = "fab fa-wordpress";
+	}
+
+	public static class ParablesOfYeshua
+	{
+		public const string Index = "/ParablesOfYeshua";
+		public const string Title = "Parables of Yeshua in the OT";
+		public const string Icon = "fab fa-wordpress";
+	}
+
+	public static class PeopleKilled
+	{
+		public const string Index = "/PeopleKilled";
+		public const string Title = "People Killed";
+		public const string Icon = "fas fa-battery-empty";
+	}
+
+	public static class TimeLine
+	{
+		public const string Index = "/TimeLine";
+		public const string Title = "Time line";
+		public const string Icon = "fab fa-wordpress";
+	}
+
+
+	public static class YosephAndYeshuaComparison
+	{
+		public const string Index = "/ParablesOfYeshua";
+		public const string Title = "Parables of Yeshua in the OT";
+		public const string Icon = "fab fa-wordpress";
+	}
+	
 
 	/*
 	- From  MhbWasmSQLite.Client.Features.Hebrew;

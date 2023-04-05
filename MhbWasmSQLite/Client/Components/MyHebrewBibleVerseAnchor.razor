@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Components
+@*@using Microsoft.AspNetCore.WebUtilities*@
+
+<NavLink class="nav-link" href="@GetLink()" Match="NavLinkMatch.All">
+  Deu 18:18-19 KJV
+</NavLink>
+
+@code {
+  [Parameter] public int BegId { get; set; }
+  [Parameter] public int EndId { get; set; }
+  [Parameter] public string Slug { get; set; }
+
+  private string GetLink()
+  {
+    /*
+    var queryParams = new Dictionary<string, string>
+      {
+        ["scriptureID_Beg"] = ScriptureIdBeg.ToString(),
+        ["scriptureID_End"] = ScriptureIdEnd.ToString(),
+        ["slug"] = Slug
+      };
+
+    var url = QueryHelpers.AddQueryString("/Scripture/Verses", queryParams);
+    return url;
+    */
+  }
+}
