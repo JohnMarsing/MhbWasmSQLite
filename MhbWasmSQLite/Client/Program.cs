@@ -11,6 +11,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<IScriptureService, ScriptureService>();
+builder.Services.AddScoped<IBibleListService, BibleListService>();
 builder.Services.AddBlazoredToast();
 builder.Services.AddFluxor(o =>
 {

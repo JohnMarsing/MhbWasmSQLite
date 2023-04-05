@@ -35,4 +35,8 @@
     <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Lists\Enums\" />
+  </ItemGroup>
+
 </Project>

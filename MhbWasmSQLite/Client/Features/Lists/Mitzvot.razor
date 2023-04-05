@@ -76,8 +76,8 @@
         <sup>24</sup>  Thou shalt not bow down to their gods, nor serve them, nor do after their works: but thou shalt utterly overthrow them, and quite break down their images.
         <small>
           <cite>
-            <Anchor ></Anchor>
-            @Html.ActionLink("Exo 23:20-24 KJV", "Verses", "Scripture", new { scriptureID_Beg = 2165, scriptureID_End = 2169, slug = "Exo-23-20-24" }, null)
+            @*<Anchor ></Anchor>*@
+            @*@Html.ActionLink("Exo 23:20-24 KJV", "Verses", "Scripture", new { scriptureID_Beg = 2165, scriptureID_End = 2169, slug = "Exo-23-20-24" }, null)*@
           </cite>
         </small>
       </blockquote>
@@ -86,7 +86,7 @@
         <sup>19</sup>  And it shall come to pass, that whosoever will not hearken unto my words which he shall speak in my name, I will require it of him.
         <small>
           <cite>
-            @Html.ActionLink("Deu 18:18-19 KJV", "Verses", "Scripture", new { scriptureID_Beg = 5403, scriptureID_End = 5404, slug = "Deu-18-18-19" }, null)
+            @*@Html.ActionLink("Deu 18:18-19 KJV", "Verses", "Scripture", new { scriptureID_Beg = 5403, scriptureID_End = 5404, slug = "Deu-18-18-19" }, null)*@
           </cite>
         </small>
       </blockquote>
@@ -102,7 +102,7 @@
           <sup>20</sup>  But the prophet, which shall presume to speak a word in my name, (<span class="text-warning">תא</span>) which I have not commanded him to speak, or that shall speak in the name of other gods, even that prophet shall die.
           <small>
             <cite>
-              @Html.ActionLink("Deu 18:20 KJV", "Verses", "Scripture", new { scriptureID_Beg = 5405, scriptureID_End = 5405, slug = "Deu-18-20" }, null)
+              @*@Html.ActionLink("Deu 18:20 KJV", "Verses", "Scripture", new { scriptureID_Beg = 5405, scriptureID_End = 5405, slug = "Deu-18-20" }, null)*@
             </cite>
           </small>
         </blockquote>
@@ -130,38 +130,39 @@
 
 <TorahBookFilter />
 
-<div class="table-responsive">
-	<table class="table table-condensed table-striped">
-		<tr>
-			<th>Detail</th>
-			<th>Verse(s)</th>
-			<th>Description</th>
-		</tr>
+@switch(_status)
+{
+	case Status.Loading:
+		break;
 
-		<tr>
-		<td>Detail</td>
-		<td>Verse(s)</td>
-		<td>Description</td>
-		</tr>
+	case Status.Loaded:
+    <div class="table-responsive">
+      <table class="table table-condensed table-striped">
+        <tr>
+          <th>Detail</th>
+          <th>Verse(s)</th>
+          <th>Description</th>
+        </tr>
 
+        @foreach (var item in MitzvahList!)
+        {
+          <tr>
+            <td>@item.Detail</td>
+            <td>@item.Verse</td>
+            <td>@item.Descr</td>
+          </tr>
+        }
+      </table>
+    </div>
+    break;
 
-	</table>
-</div>
+	case Status.Error:
+		<h4 class="text-danger mt-5">Error no data gotten</h4>
+		<p class="">Error...</p>
+		<p class="p-2">@_msg</p>
+		break;
 
-@code {
-/*
-			@foreach (var item in EnumsFV.Verses.List.OrderBy(o => o.Value).ToList())
-					{
-					<tr>
-						<td>@item.Detail</td>
-						<td>
-							<a href="@Anchors.VerseByScriptureIdRange.Index"
-								asp-route-begId="@item.ScriptureID_Beg" asp-route-endId="@item.ScriptureID_End" asp-route-slug="@item.Verse">
-							@item.Verse
-							</a>
-						</td>
-						<td>@item.Descr</td>
-					</tr>
-				}
-*/
+	default:
+		break;
 }
+
