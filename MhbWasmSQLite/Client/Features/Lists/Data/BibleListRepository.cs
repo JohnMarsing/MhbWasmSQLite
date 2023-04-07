@@ -1,12 +1,4 @@
-﻿using MhbWasmSQLite.Client.Services;
-using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
-using MhbWasmSQLite.Shared;
-using System.Reflection;
-using MhbWasmSQLite.Client.Enums;
-using MhbWasmSQLite.Client.Components.BookChapterToolbar.Enums;
-
-namespace MhbWasmSQLite.Client.Features.Lists.Data;
+﻿namespace MhbWasmSQLite.Client.Features.Lists.Data;
 
 public class BibleListRepository
 {
@@ -22,18 +14,17 @@ public class BibleListRepository
 	}
 	#endregion
 
-	public async Task GetMitzvot(BibleBook bibleBook)
+	public async Task GetMitzvot(Enums.TorahBookFilter filter)
 	{
 		string inside = nameof(BibleListRepository) + "!" + nameof(GetMitzvot);
-		string abrv = bibleBook != null ? bibleBook.Abrv : "NULL";
 
-		Logger.LogDebug(string.Format("Inside {0}; BibleBook: {1}", inside, abrv));
-		if (bibleBook is not null)
+		Logger.LogDebug(string.Format("Inside {0}; BibleBook: {1}", inside));
+		if (filter is not null)
 		{
 			try
 			{
 				List<MhbWasmSQLite.Shared.Mitzvah> MitzvahList = new();
-				await svc.GetMitzvotByTorahBookId(bibleBook);
+				await svc.GetMitzvotByTorahBookId(filter);
 
 				if (svc.Mitzvot is not null)
 				{

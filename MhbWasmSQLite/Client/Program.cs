@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MhbWasmSQLite.Client.Services;
 using Fluxor;
 using Blazored.Toast;
+using MhbWasmSQLite.Client.Features.Lists;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

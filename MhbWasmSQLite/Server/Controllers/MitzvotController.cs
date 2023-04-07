@@ -25,16 +25,32 @@ namespace MhbWasmSQLite.Server.Controllers
 		IEnumerable<Mitzvah>? mitzvot;
 
 		[HttpGet]
-		[Route("{bookId}")]
+		[Route("book/{bookId}")]
 		public async Task<ActionResult<List<Mitzvah>>> GetByTorahBookId(int bookId)
 		{
 
 			_logger.LogInformation(string.Format("Inside {0}; bookId: {1}"
 				, nameof(MitzvotController) + "!" + nameof(GetByTorahBookId), bookId));
 
-			Parms = new DynamicParameters(new { BookId = bookId});
-			SQL = $@"
---DECLARE @BookId int =  2
+			if (bookId == 0)
+			{
+				SQL = $@"
+SELECT 
+Id, Detail, BegId, EndId, Verse, Descr, BookId, BookAbrv
+FROM Mitzvot
+ORDER BY Id
+LIMIT 800
+";
+				using IDbConnection conn = new SQLiteConnection(_config.GetConnectionString(connectionId));
+				{
+					mitzvot = await conn.QueryAsync<Mitzvah>(SQL);
+				}
+				return Ok(mitzvot);
+			}
+			else
+			{
+				Parms = new DynamicParameters(new { BookId = bookId });
+				SQL = $@"
 SELECT 
 Id, Detail, BegId, EndId, Verse, Descr, BookId, BookAbrv
 FROM Mitzvot
@@ -42,16 +58,18 @@ WHERE BookId=@BookId
 ORDER BY Id
 LIMIT 800
 ";
-			using IDbConnection conn = new SQLiteConnection(_config.GetConnectionString(connectionId));
-			{
-				mitzvot = await conn.QueryAsync<Mitzvah>(SQL, Parms);
+				using IDbConnection conn = new SQLiteConnection(_config.GetConnectionString(connectionId));
+				{
+					mitzvot = await conn.QueryAsync<Mitzvah>(SQL, Parms);
+				}
+				return Ok(mitzvot);
 			}
-			return Ok(mitzvot);
+
 		}
 
 
 		[HttpGet]
-		[Route("{MitzvahId}")]
+		[Route("/id/{MitzvahId}")]
 		public async Task<ActionResult<Mitzvah>> GetById(int mitzvahId)
 		{
 			Parms = new DynamicParameters(new { Id = mitzvahId });
@@ -78,6 +96,6 @@ LIMIT 1
 			}
 		}
 
-	}
+  }
 }
 
