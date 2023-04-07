@@ -4,13 +4,16 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\service-worker.js" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Features\Lists\PeopleKilledContent.razor~RF51a032c.TMP" />
   </ItemGroup>
-
-
 
   <ItemGroup>
     <PackageReference Include="Ardalis.SmartEnum" Version="7.0.0" />
@@ -23,6 +26,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.4" PrivateAssets="all" />
   </ItemGroup>
 
+	<ItemGroup>
+		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
+	</ItemGroup>
+	
   <ItemGroup>
     <ProjectReference Include="..\Shared\MhbWasmSQLite.Shared.csproj" />
   </ItemGroup>
@@ -33,6 +40,10 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Features\FavoriteVerses\DetailVerseCard.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\service-worker.js" />
   </ItemGroup>
 
 </Project>
