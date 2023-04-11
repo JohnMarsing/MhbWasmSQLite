@@ -14,14 +14,11 @@ public abstract class Link : SmartEnum<Link>
 	#region Id's
 	private static class Id
 	{
-		internal const int Home = 13;
-		internal const int About = 14;
 		internal const int Parasha = 1;
 		/*
-				internal const int ParashaCurrent = 1;
-				internal const int BookChapter = 2;
-				internal const int VerseList = 3;
-				internal const int VersesCsv = 4;
+		internal const int ParashaCurrent = 1;
+		internal const int BookChapter = 2;
+		internal const int VersesCsv = 4;
 		*/
 		internal const int Article = 5;
 		internal const int FavoriteVerses = 6;
@@ -31,7 +28,10 @@ public abstract class Link : SmartEnum<Link>
 		internal const int Teaching = 10;
 		internal const int Sitemap = 11;
 		internal const int BibleSearch = 12;
-		internal const int HomeMhbVer6 = 13;
+		internal const int Home = 13;
+		internal const int About = 14;
+		internal const int HomeMhbVer6 = 15;
+		internal const int VerseList = 16;
 
 	}
 	#endregion
@@ -55,6 +55,7 @@ public abstract class Link : SmartEnum<Link>
 	public static readonly Link Home = new HomeSE();
 	public static readonly Link About = new AboutSE();
 	public static readonly Link HomeMhbVer6 = new HomeMhbVer6SE();
+	public static readonly Link VerseList = new VerseListSE();
 	#endregion
 
 	private Link(string name, int value) : base(name, value)  // Constructor
@@ -218,6 +219,16 @@ public abstract class Link : SmartEnum<Link>
 		public override string HomeFloatRightHebrew => "לְלַמֵד";
 	}
 
+	private sealed class VerseListSE : Link
+	{
+		public VerseListSE() : base($"{nameof(Id.VerseList)}", Id.VerseList) { }
+		public override string Index => "VerseList";
+		public override string Title => "Verse List";
+		public override string Icon => "fas fa-list";
+		public override string ShortTitle => "";
+		public override string HomeTitleSuffix => " mispar h4557";
+		public override string HomeFloatRightHebrew => "מִסְפָּר";
+	}
 
 	#endregion
 }
@@ -235,16 +246,7 @@ private sealed class BookChapterSE : LinkEnum
 	public override string HomeTitleSuffix => " Torah H8451";
 	public override string HomeFloatRightHebrew => "תּוֹרָה";
 }
-private sealed class VerseListSE : LinkEnum
-{
-	public VerseListSE() : base($"{nameof(Id.VerseList)}", Id.VerseList) { }
-	public override string Index => "VerseList";
-	public override string Title => "Verse List";
-	public override string Icon => "fas fa-list";
-	public override string ShortTitle => "";
-	public override string HomeTitleSuffix => " mispar h4557";
-	public override string HomeFloatRightHebrew => "מִסְפָּר";
-}
+
 
 private sealed class VersesCsvSE : LinkEnum
 {

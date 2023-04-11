@@ -12,6 +12,7 @@ public interface IScriptureService
 {
 	public List<ScriptureVM> Scriptures { get; set; }
 	Task GetByBookChapter(BibleBook bibleBook, int chapterId);
+	Task GetByVerses(int begId, int endId);
 	Task<ScriptureVM> GetById(int id);  // 
 }
 
@@ -35,6 +36,19 @@ public class ScriptureService : IScriptureService
 			, nameof(ScriptureService) + "!" + nameof(GetByBookChapter), Uri));
 		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: Uri);
 		
+		if (result is not null)
+		{
+			Scriptures = result;
+		}
+	}
+
+	public async Task GetByVerses(int begId, int endId) 
+	{
+		string Uri = $"api/verselist/{begId}/{endId}";
+		_logger.LogDebug(string.Format("Inside {0}; Uri: {1}"
+			, nameof(ScriptureService) + "!" + nameof(GetByVerses), Uri));
+		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: Uri);
+
 		if (result is not null)
 		{
 			Scriptures = result;

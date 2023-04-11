@@ -1,4 +1,10 @@
-﻿@using MhbWasmSQLite.Client.Enums;
+﻿@page "/VerseList/{BegId:int}/{EndId:int}"
+@using MhbWasmSQLite.Client.Enums;
+
+@*https://myhebrewbible.com/Verse/jer-31-1-9/Englishonly*@
+
+<PageHeader Page="@GlobalEnums.Link.VerseList" />
+
 
 @switch (_status)
 {
@@ -6,7 +12,8 @@
 		break;
 
 	case Status.Loaded:
-		@foreach (var item in Scriptures!)
+	<p>@Text</p>
+		@foreach (var item in svc!.Scriptures!)
 		{
 			<p>
 				<sup class="text-primary"><b>@item.Verse</b></sup> @((MarkupString)@item.KJV!)

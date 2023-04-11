@@ -10,6 +10,8 @@
 
 @*<SourceAnchor Url="https://jewsforjesus.org/publications/newsletter/july-1985/08_joseph_jesus" />*@
 
+
+
 <BlurbCard>
 	A list of the 613 Commandments of Torah.
 </BlurbCard>
@@ -17,35 +19,12 @@
 <div class="mt-3">
 	<LearnMoreToggleTemplate>
 		<ChildContent>
-			<MitzvotLearnMore />
+			<LearnMore />
 		</ChildContent>
 	</LearnMoreToggleTemplate>
 </div>
 
-@*<TorahBookFilter />*@
-
-
-<div class="row mt-3">
-	<div class="col-12">
-		<div class="float-end">
-			@foreach (var item in Enums.TorahBookFilter.List.OrderBy(o => o.Value))
-			{
-				<a @onclick="@(() => OnClickFilter(item))" title="Filter by @item.Name"
-				 class="btn btn-outline-primary btn-sm @ActiveFilter(item)">
-					@item.Name
-				</a>
-			}
-		</div>
-	</div>
-</div>
-
-<div class="row mt-0">
-	<div class="col-12">
-		<div class="float-end">
-			<p class="mb-2 ">Filter <span class="fas fa-filter"></span></p>
-		</div>
-	</div>
-</div>
+<Filter CurrentFilter="CurrentFilter" OnFilterSelected="@HandleFilterSelected" />
 
 
 @switch (_status)

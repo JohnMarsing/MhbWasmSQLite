@@ -51,6 +51,31 @@ LIMIT 250
 		}
 
 
+		[HttpGet]
+		[Route("/verselist/{begId:int}/{endId:int}")]
+		public async Task<ActionResult<List<ScriptureVM>>> GetByVerses(int begId, int endId)
+		{
+
+			_logger.LogInformation(string.Format("Inside {0}; begId: {1}; endId: {2}"
+				, nameof(ScriptureController) + "!" + nameof(GetByVerses), begId, endId));
+
+			Parms = new DynamicParameters(new { BegId = begId, EndId = endId });
+			SQL = $@"
+--DECLARE @BegId int =  2, @EndId=2
+SELECT Id, BCV, Verse, KJV, VerseOffset
+FROM Scripture
+WHERE Id >= @BegId AND Id <= @EndId
+ORDER BY Id
+LIMIT 250
+";
+			using IDbConnection conn = new SQLiteConnection(_config.GetConnectionString(connectionId));
+			{
+				scriptures = await conn.QueryAsync<ScriptureVM>(SQL, Parms);
+			}
+			return Ok(scriptures);
+		}
+
+
 		//[HttpGet("{ScriptureId}")]
 		[HttpGet]
 		[Route("{ScriptureId}")]
