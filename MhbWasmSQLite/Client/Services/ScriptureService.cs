@@ -14,6 +14,7 @@ public interface IScriptureService
 	Task GetByBookChapter(BibleBook bibleBook, int chapterId);
 	Task GetByVerses(int begId, int endId);
 	Task<ScriptureVM> GetById(int id);  // 
+	public List<VerseListVM> VerseList { get; set; }
 }
 
 public class ScriptureService : IScriptureService
@@ -28,6 +29,8 @@ public class ScriptureService : IScriptureService
 
 	public HttpClient? Http {get; }
 	public List<ScriptureVM> Scriptures { get; set; } = new();
+
+	public List<VerseListVM> VerseList { get; set; } = new();
 
 	public async Task GetByBookChapter(BibleBook bibleBook, int chapterId)
 	{
@@ -44,14 +47,14 @@ public class ScriptureService : IScriptureService
 
 	public async Task GetByVerses(int begId, int endId) 
 	{
-		string Uri = $"api/verselist/{begId}/{endId}";
+		string Uri = $"api/versebyrange/{begId}/{endId}";
 		_logger.LogDebug(string.Format("Inside {0}; Uri: {1}"
 			, nameof(ScriptureService) + "!" + nameof(GetByVerses), Uri));
-		var result = await _http.GetFromJsonAsync<List<ScriptureVM>>(requestUri: Uri);
+		var result = await _http.GetFromJsonAsync<List<VerseListVM>>(requestUri: Uri);
 
 		if (result is not null)
 		{
-			Scriptures = result;
+			VerseList = result;
 		}
 	}
 

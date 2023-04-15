@@ -13,7 +13,7 @@
 
 	case Status.Loaded:
 	<p>@Text</p>
-		@foreach (var item in svc!.Scriptures!)
+		@foreach (var item in svc!.VerseList!)
 		{
 			<p>
 				<sup class="text-primary"><b>@item.Verse</b></sup> @((MarkupString)@item.KJV!)

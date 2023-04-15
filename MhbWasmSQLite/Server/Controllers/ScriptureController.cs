@@ -25,6 +25,7 @@ namespace MhbWasmSQLite.Server.Controllers
 		public DynamicParameters? Parms { get; set; }
 
 		IEnumerable<ScriptureVM>? scriptures;
+		IEnumerable<VerseListVM>? verselist;
 
 		[HttpGet]
 		[Route("{bookId}/{chapterId:int}")]
@@ -53,7 +54,7 @@ LIMIT 250
 
 		[HttpGet]
 		[Route("/verselist/{begId:int}/{endId:int}")]
-		public async Task<ActionResult<List<ScriptureVM>>> GetByVerses(int begId, int endId)
+		public async Task<ActionResult<List<VerseListVM>>> GetByVerses(int begId, int endId)
 		{
 
 			_logger.LogInformation(string.Format("Inside {0}; begId: {1}; endId: {2}"
@@ -67,12 +68,13 @@ FROM Scripture
 WHERE Id >= @BegId AND Id <= @EndId
 ORDER BY Id
 LIMIT 250
+
 ";
 			using IDbConnection conn = new SQLiteConnection(_config.GetConnectionString(connectionId));
 			{
-				scriptures = await conn.QueryAsync<ScriptureVM>(SQL, Parms);
+				verselist = await conn.QueryAsync<VerseListVM>(SQL, Parms);
 			}
-			return Ok(scriptures);
+			return Ok(verselist);
 		}
 
 

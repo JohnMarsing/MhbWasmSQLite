@@ -13,7 +13,7 @@ public partial class Index
 {
 	[Parameter] public string? Text { get; set; } = "Gen 1:1-2";
 	[Parameter] public int BegId { get; set; } = 1;
-	[Parameter] public int EndId { get; set; } = 2;
+	[Parameter] public int EndId { get; set; } = 1;
 	[Parameter] public string? Slug { get; set; }
 
 	[Inject] private IScriptureService? svc { get; set; }
@@ -29,7 +29,7 @@ public partial class Index
 		Logger!.LogDebug(string.Format("Inside Page: {0}, Class!Method: {1}; CurrentFilter: {2}"
 			, Page.Title, nameof(Index) + "!" + nameof(OnInitializedAsync), CurrentFilter));
 		*/
-		await PopulateScriptures(1, 2);
+		await PopulateScriptures(BegId, EndId); //		await PopulateScriptures(1, 2);
 	}
 
 	private async Task PopulateScriptures(int begId, int endId)

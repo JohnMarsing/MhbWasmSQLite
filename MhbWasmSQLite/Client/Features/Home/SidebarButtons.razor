@@ -1,4 +1,17 @@
 ﻿
+
+<a href="@GlobalEnums.Link.VerseList.Index/1/1" title="@GlobalEnums.Link.VerseList.Title @GlobalEnums.Link.VerseList.HomeTitleSuffix"
+	 class="list-group-item list-group-item-warning ">
+	<div class="d-flex w-100 justify-content-between">
+		<i class="@GlobalEnums.Link.VerseList.Icon fa-fw fa-3x" aria-hidden="true"></i>
+		<span class="@TitleCSS">@GlobalEnums.Link.VerseList.Title</span>
+		<span class="float-end text-info">
+			<span class="hebrew">@GlobalEnums.Link.VerseList.HomeFloatRightHebrew</span>
+		</span>
+	</div>
+</a>
+
+
 @foreach (var item in GlobalEnums.Link
 	.List
 	.OrderBy(o => o.Value)
